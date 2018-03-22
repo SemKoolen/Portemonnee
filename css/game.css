@@ -1,5 +1,6 @@
 main {
-  width: 100%;
+  text-align: center; 
+  background-color: #462AC8;
 }
 
 main div.leftsection {
@@ -7,6 +8,9 @@ main div.leftsection {
   vertical-align: top;
   width: 15%;
   background-color: #FFA37C;
+}
+main div.leftsection h1 {
+  height: 67px;
 }
 
 main div.mainsection {
@@ -16,33 +20,92 @@ main div.mainsection {
 }
 main div.mainsection div.maintop {
   background-color: #FFE67C;
-  height: 50px;
+  height: 67px;
 }
-main div.mainsection div.maintop > h2, button {
+main div.mainsection div.maintop > h1, button {
   display: inline-block;
+  margin: 1% 10px 0 10px;
 }
-main div.mainsection div.maintop h2 {
-  margin-right: 38%;
+main div.mainsection div.maintop h1#questionnumber {
+  float: left;
+}
+main div.mainsection div.maintop h1#timer {
+  margin-right: 5%;
 }
 main div.mainsection div.maintop button {
   width: 100px;
   height: 40px;
   font-size: 20px;
   background-color: #13C67E;
-  border: 2px solid #00834E; 
-  margin: 2.5px;
+  border: 2px solid #00834E;
+  float: right;
 }
-/* 
+main div.mainsection div.maintop button:hover {
+  cursor: pointer;
+  opacity: 0.8;
+  transition: 5ms;
+}
+
 main div.mainsection div.mainmiddle {
-  
+  background-color: #7868BE;
+  margin-top: 10px;
+  padding: 11.4%;
 }
+main div.mainsection div.mainmiddle img {
+  width: 35%;
+  min-width: 100px; 
+}
+main div.mainsection div.mainmiddle p#productprice {
+  font-size: 40px;
+  border: 2px solid #969D9A;
+  background-color: #E6E4DC;
+  width: 130px;
+}
+
 main div.mainsection div.mainfooter {
-  
-} */
+  background-color: #FFE67C;
+  margin-top: 10px;
+}
+main div.mainsection div.mainfooter div {
+  display: inline-block;
+  margin-top: 3px;
+}
+main div.mainsection div.mainfooter div > img {
+  margin-right: 5px;
+}
+main div.mainsection div.mainfooter div > img:hover {
+  cursor: pointer;
+  opacity: 0.8;
+  transition: 5ms;
+}
+main div.mainsection div.mainfooter img.coin {
+  width: 70px;
+}
+main div.mainsection div.mainfooter img.note {
+  width: 120px;
+}
 
 main div.rightsection {
   display: inline-block;
   vertical-align: top;
   width: 15%;
+}
+main div.rightsection div.righttop {
+  height: 67px;
   background-color: #FFA37C;
+}
+main div.rightsection div.rightmoney {
+  margin-top: 10px;
+  background-color: orange;
+}
+main div.rightsection div.rightmoney img:hover {
+  cursor: pointer;
+  opacity: 0.8;
+  transition: 5ms;
+}
+main div.rightsection div.rightmoney img.coin {
+  width: 64px;
+}
+main div.rightsection div.rightmoney img.note {
+  width: 80%;
 }
