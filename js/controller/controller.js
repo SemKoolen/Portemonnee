@@ -23,7 +23,7 @@ class Controller {
   //Tells counterHandler method what amount to be added or subtracted.
   //The method also uses the amount to figure out wich coin was pressed.
   onClickMoney(action, amount) {
-    this.counter.moneyHandler(action, amount);
+    this.counter.counterHandler(action, amount);
   }
 
 }
