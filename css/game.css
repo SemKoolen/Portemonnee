@@ -1,15 +1,48 @@
 main {
-  background-color: green;
+  width: 100%;
 }
 
-div.leftsection {
+main div.leftsection {
+  display: inline-block;
+  vertical-align: top;
+  width: 15%;
+  background-color: #FFA37C;
+}
+
+main div.mainsection {
+  display: inline-block;
+  vertical-align: top;
+  width: 60%;
+}
+main div.mainsection div.maintop {
+  background-color: #FFE67C;
+  height: 50px;
+}
+main div.mainsection div.maintop > h2, button {
+  display: inline-block;
+}
+main div.mainsection div.maintop h2 {
+  margin-right: 38%;
+}
+main div.mainsection div.maintop button {
+  width: 100px;
+  height: 40px;
+  font-size: 20px;
+  background-color: #13C67E;
+  border: 2px solid #00834E; 
+  margin: 2.5px;
+}
+/* 
+main div.mainsection div.mainmiddle {
   
 }
-
-div.mainsection {
+main div.mainsection div.mainfooter {
   
-}
+} */
 
-div.rightsection {
-
+main div.rightsection {
+  display: inline-block;
+  vertical-align: top;
+  width: 15%;
+  background-color: #FFA37C;
 }
