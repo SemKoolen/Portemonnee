@@ -7,7 +7,7 @@ class EasyView extends Observer {
 
   reset() {
     this.removeAllCounterObjects();
-    // this.removeBills();
+    this.removeBills();
   }
 
   update() {

@@ -8,10 +8,7 @@ class Controller {
     this.createListeners();
   }
 
-  onClickMoney(action, amount) {
-    this.counter.moneyHandler(action, amount);
-  }
-
+  //Creates 12 listeners for both the adding and subtracting of coins & bills.
   createListeners(){
     let buttons = ["1cent", "2cent", "5cent", "10cent", "20cent", "50cent", "1euro", "2euro", "5euro",
                    "10euro", "20euro", "50euro"];
@@ -21,6 +18,12 @@ class Controller {
     document.getElementById("add"+buttons[x]).addEventListener("click", (e) => this.onClickMoney("add",amounts[x]));
     document.getElementById("subtract"+buttons[x]).addEventListener("click", (e) => this.onClickMoney("subtract",amounts[x]));
     }
+  }
+
+  //Tells counterHandler method what amount to be added or subtracted.
+  //The method also uses the amount to figure out wich coin was pressed.
+  onClickMoney(action, amount) {
+    this.counter.moneyHandler(action, amount);
   }
 
 }
