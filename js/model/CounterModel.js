@@ -1,4 +1,4 @@
-class ToonbankModel extends Observable {
+class CounterModel extends Observable {
 	constructor() {
     super();
   }

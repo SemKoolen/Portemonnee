@@ -1,4 +1,4 @@
-class KassaModel extends Observable {
+class CashRegisterModel extends Observable {
 	constructor() {
     super();
   }
