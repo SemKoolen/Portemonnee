@@ -1,5 +1,5 @@
 main {
-  text-align: center; 
+  text-align: center;
   background-color: #462AC8;
 }
 
@@ -53,7 +53,7 @@ main div.mainsection div.mainmiddle {
 }
 main div.mainsection div.mainmiddle img {
   width: 35%;
-  min-width: 100px; 
+  min-width: 100px;
 }
 main div.mainsection div.mainmiddle p#productprice {
   font-size: 40px;
@@ -65,6 +65,10 @@ main div.mainsection div.mainmiddle p#productprice {
 main div.mainsection div.mainfooter {
   background-color: #FFE67C;
   margin-top: 10px;
+  display: grid;
+  grid-template-columns: auto auto auto auto auto auto auto auto auto auto auto auto;
+  grid-template-areas:
+  'coin' 'note';
 }
 main div.mainsection div.mainfooter div {
   display: inline-block;

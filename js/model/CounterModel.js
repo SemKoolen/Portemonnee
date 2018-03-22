@@ -1,106 +1,112 @@
 class CounterModel extends Observable {
 	constructor() {
     super();
-    this.totalAmount ;
-    this.dontDisplay ;
-    this.currentCoinDiv ;
-    this.createCoinAmountVars();
+    this.totalAmount = 0 ;
+    this.currentCoinObject ;
+    this.createCoinArray();
   }
 
+	getDontDisplay() {
+		return this.dontDisplay;
+	}
+
+	getDoDisplay() {
+		return this.doDisplay;
+	}
+
+	getCurrentCoinObject() {
+		return this.currentCoinObject;
+	}
+
+	getCurrentCoinAmount() {
+		return this.currentCoinAmount;
+	}
+
+	getCurrentTotal() {
+		return this.totalAmount;
+	}
+
   moneyHandler(action, amount) {
-    let coin = this.defineCoin(amount);
-    if (action == "add") {
-      this.addToCoinTotal(coin);
-      this.totalAmount = +this.totalAmount + +amount;
-      if (coin == 1) {
-        this.doDisplay = coin;
-      }
-    } else {
-      this.subtractFromCoinTotal(coin);
-      this.totalAmount -= amount;
-      if (coin == 0) {
-        this.dontDisplay = this.currentCoinDiv;
-      }
-    }
+		console.log(amount);
+			let coin = this.defineCoin(amount);
+			if (action == "add") {
+					this.coinArray[coin] = this.coinArray[coin] + 1;
+					this.totalAmount += amount;
+				} else if (action == "subtract") {
+					this.coinArray[coin] = this.coinArray[coin] - 1;
+					this.totalAmount -= amount;
+    		}
+				this.currentCoinAmount = this.coinArray[coin];
+
+			if (this.coinArray[coin] == 1) {
+				this.doDisplay = this.currentCoinObject;
+				this.dontDisplay = null;
+			}  else if (this.coinArray[coin] == 0) {
+				this.dontDisplay = this.currentCoinObject;
+				this.doDisplay = null ;
+			}
     this.notify();
   }
 
-  addToCoinTotal(coin) {
-    coin ++;
-  }
-
-  subtractFromCoinTotal(coin) {
-    coin --;
-  }
-
-  changeCoinTotal() {
+  defineCoin(amount) {
     switch (amount) {
       case 0.01:
-            this.currentCoinDiv = "counter1cent";
-            return this.total1Cent;
+            this.currentCoinObject = "counter1cent";
+            return 0;
             break;
       case 0.02:
-            this.currentCoinDiv = "counter2cent";
-            return this.total2Cent;
+            this.currentCoinObject = "counter2cent";
+            return 1;
             break;
       case 0.05:
-            this.currentCoinDiv = "counter5cent";
-            return this.total5Cent;
+            this.currentCoinObject = "counter5cent";
+            return 2;
             break;
       case 0.10:
-            this.currentCoinDiv = "counter10cent";
-            return this.total10Cent;
+            this.currentCoinObject = "counter10cent";
+            return 3;
             break;
       case 0.20:
-            this.currentCoinDiv = "counter20cent";
-            return this.total20Cent;
+            this.currentCoinObject = "counter20cent";
+            return 4;
             break;
       case 0.50:
-            this.currentCoinDiv = "counter50cent";
-            return this.total50Cent;
+            this.currentCoinObject = "counter50cent";
+            return 5;
             break;
       case 1:
-            this.currentCoinDiv = "counter1euro";
-            return this.total1Euro;
+            this.currentCoinObject = "counter1euro";
+            return 6;
             break;
       case 2:
-            this.currentCoinDiv = "counter2euro";
-            return this.total2Euro;
+            this.currentCoinObject = "counter2euro";
+            return 7;
             break;
       case 5:
-            this.currentCoinDiv = "counter5euro";
-            return this.total5Euro;
+            this.currentCoinObject = "counter5euro";
+            return 8;
             break;
       case 10:
-            this.currentCoinDiv = "counter10euro";
-            return this.total10Euro;
+            this.currentCoinObject = "counter10euro";
+            return 9;
             break;
       case 20:
-            this.currentCoinDiv = "counter20euro";
-            return this.total20Euro;
+            this.currentCoinObject = "counter20euro";
+            return 10;
             break;
       case 50:
-            this.currentCoinDiv = "counter50euro";
-            return this.total50Euro;
+            this.currentCoinObject = "counter50euro";
+            return 11;
             break;
     }
 
   }
 
-  createCoinAmountVars() {
-    this.total1Cent ;
-    this.total2Cent ;
-    this.total5Cent ;
-    this.total10Cent ;
-    this.total20Cent ;
-    this.total50Cent ;
-    this.total1Euro ;
-    this.total2Euro ;
-    this.total5Euro ;
-    this.total10Euro ;
-    this.total20Euro ;
-    this.total50Euro ;
+  createCoinArray() {
+		this.coinArray = [];
+		for (let x = 0; x < 12; x++) {
+			this.coinArray[x] = 0;
+		}
   }
-
 
 }
