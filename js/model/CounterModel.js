@@ -22,11 +22,13 @@ class CounterModel extends Observable {
 			//Adds new coins worth to the total.
 			if (action == "add") {
 					this.coinArray[coin] = this.coinArray[coin] + 1;
-					this.totalAmount += amount;
+					this.totalAmount +=amount;
 			} else if (action == "subtract") {
 					this.coinArray[coin] = this.coinArray[coin] - 1;
 					this.totalAmount -= amount;
     	}
+			//Fixes bug where the new total amount is a few millionth off from the correct sum.
+			this.totalAmount = Math.round(this.totalAmount * 100) / 100;
 			//Saves amount of coins the specific coin being handled  outside the method.
 			this.currentCoinAmount = this.coinArray[coin];
 
