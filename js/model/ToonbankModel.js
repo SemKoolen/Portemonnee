@@ -1,6 +1,6 @@
-class DobbelsteenModel extends Observable {
+class ToonbankModel extends Observable {
 	constructor() {
     super();
   }
-  
+
 }

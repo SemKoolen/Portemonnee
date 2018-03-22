@@ -1,6 +1,6 @@
-class DobbelsteenModel extends Observable {
+class KassaModel extends Observable {
 	constructor() {
     super();
   }
-  
+
 }
