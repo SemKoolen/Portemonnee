@@ -65,10 +65,25 @@ main div.mainsection div.mainmiddle p#productprice {
 main div.mainsection div.mainfooter {
   background-color: #FFE67C;
   margin-top: 10px;
-  display: grid;
+  overflow: hidden;
+  display: inline-block;
   grid-template-columns: auto auto auto auto auto auto auto auto auto auto auto auto;
   grid-template-areas:
   'coin' 'note';
+}
+
+main div.mainsection div.mainfooter div#counter1cent {
+  background: url("images/Geld/1cent.png");
+  background-size: cover;
+  width: 70px;
+  height: 100px;
+}
+
+
+
+
+main div.mainsection div.mainfooter div p {
+  display: inline-block;
 }
 main div.mainsection div.mainfooter div {
   display: inline-block;
