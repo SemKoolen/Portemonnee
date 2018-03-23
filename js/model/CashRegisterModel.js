@@ -3,4 +3,6 @@ class CashRegisterModel extends Observable {
     super();
   }
 
+	
+
 }
