@@ -3,15 +3,11 @@ html, body {
 	padding:0;
 	height:100%
 }
-body {
-  background: url("images/money.jpg");
-  background-size: cover;
-}
 
 .centerdiv {
-  position:relative;
+  position: relative;
+  background-color: lightslategray;
 	min-height:100%;
-	background:#f9f9f9;
 }
 .middle {
   width: 30%;
@@ -28,9 +24,13 @@ body {
   text-align: center;
   width: 70%;
   height: 40px;
-  font-size: 30px;
+  font-size: 20px;
   padding: 5px;
   margin-top: 30px; 
+  /* border: 2px solid #00B16A; */
+  border: none;
+  border-radius: 5px;
+  outline-color: #00B16A;
 }
 .middle button {
   width: 20%;
@@ -39,6 +39,24 @@ body {
 }
 .middle h1 {
   text-align: center; 
+}
+
+.middle .difficulty {
+  display: inline-block;
+}
+.middle .difficulty button {
+  display: inline-block;
+  width: 100px;
+  margin: 20px auto;
+  border-radius: 10px;
+  border: none;
+  background-color: #00B16A;
+}
+.middle .difficulty button:hover {
+  cursor: pointer;
+  opacity: 0.8px;
+  transition: 5ms;
+  background-color: #13C67E;
 }
 
 .middle input,button,h1 {
