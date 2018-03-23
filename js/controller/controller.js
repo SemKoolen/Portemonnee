@@ -1,10 +1,15 @@
 class Controller {
   constructor() {
-    this.user = new UserModel();
+      this.user = new UserModel();
+      this.userView = new UserView(this.user);
+      this.startGame();
+  }
+
+  startGame(){
     this.register = new CashRegisterModel();
     this.counter = new CounterModel();
-    this.easyView = new EasyView(this.counter);
-    // this.hardView = new HardView(this.register, this.counter, this.user);
+    if (this.user.getVersion() == "easy") { this.gameView = new EasyView(this.counter, "easy")}
+    else if (this.user.getVersion() == "hard") { this.gameView = new EasyView(this.counter, "hard")}
     this.createListeners();
   }
 
@@ -21,7 +26,7 @@ class Controller {
   }
 
   //Tells counterHandler method what amount to be added or subtracted.
-  //The method also uses the amount to figure out wich coin was pressed.
+  //The method also uses the amount to figure out wich coin was clicked.
   onClickMoney(action, amount) {
     this.counter.counterHandler(action, amount);
   }
