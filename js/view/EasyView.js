@@ -1,13 +1,15 @@
 class EasyView extends Observer {
-  constructor(model) {
+  constructor(model, version) {
     super(model);
     this.model.addObserver(this);
-    this.reset();
+    this.reset(version);
   }
 
-  reset() {
+  reset(version) {
     this.removeAllCounterObjects();
-    // this.removeBills();
+    if (version == "easy") {
+      this.removeBills() ;
+    }
   }
 
   update() {
