@@ -5,29 +5,28 @@ html,body {
 }
 
 main.mainpage {
-  display: block;
+  display: none;
 }
 main.prepage {
-  display: none;
+  display: block;
 }
 
 main.prepage .centerdiv {
   position: relative;
   background-color: lightslategray;
-	min-height:100%;
+  min-height:100%;
+  
 }
-.middle {
+main.prepage .middle {
   width: 30%;
 	height: 20%;
 	background-color: seagreen;
 	position:absolute;
 	left:0;
 	right:0;
-	top:0;
-	bottom:0;
   margin:auto;
 }
-.middle input {
+main.prepage .middle input {
   text-align: center;
   width: 70%;
   height: 40px;
@@ -38,8 +37,16 @@ main.prepage .centerdiv {
   border: none;
   border-radius: 5px;
   outline-color: #00B16A;
+  -webkit-box-shadow: 0px 0px 37px 0px rgba(0,0,0,0.75);
+  -moz-box-shadow: 0px 0px 37px 0px rgba(0,0,0,0.75);
+  box-shadow: 0px 0px 37px 0px rgba(0,0,0,0.75);
 }
-.middle button#start {
+main.prepage .middle button {
+  -webkit-box-shadow: 0px 0px 10px 0px rgba(0,0,0,0.75);
+  -moz-box-shadow: 0px 0px 10px 0px rgba(0,0,0,0.75);
+  box-shadow: 0px 0px 10px 0px rgba(0,0,0,0.75);
+}
+main.prepage .middle button#start {
   width: 30%;
   height: 30px;
   margin-top: 30px; 
@@ -47,17 +54,17 @@ main.prepage .centerdiv {
   border: none;
   background-color: #00B16A;
 }
-.middle button#start:hover {
+main.prepage .middle button#start:hover {
   cursor: pointer;
   opacity: 0.8px;
   transition: 5ms;
   background-color: #13C67E;
 }
-.middle h1 {
+main.prepage .middle h1 {
   text-align: center; 
 }
 
-.middle .difficulty button {
+main.prepage .middle .difficulty button {
   display: inline-block;
   width: 25%;
   height: 30px;
@@ -66,14 +73,17 @@ main.prepage .centerdiv {
   border: none;
   background-color: #00B16A;
 }
-.middle .difficulty button:hover {
+main.prepage .middle .difficulty button:hover {
   cursor: pointer;
   opacity: 0.8px;
   transition: 5ms;
   background-color: #13C67E;
 }
+main.prepage .middle .difficulty button.active {
+  background-color: #13C67E;
+}
 
-.middle input,button,h1 {
+main.prepage .middle input,button,h1 {
   margin: 20px auto;
   display: block;
 }
@@ -153,12 +163,6 @@ main.mainpage div.mainsection div.mainfooter {
   'coin' 'note';
 }
 
-main.mainpage div.mainsection div.mainfooter div#counter1cent {
-  background: url("images/Geld/1cent.png");
-  background-size: cover;
-  width: 70px;
-  height: 100px;
-}
 main.mainpage div.mainsection div.mainfooter div p {
   display: inline-block;
 }
