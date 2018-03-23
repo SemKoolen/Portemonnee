@@ -1,19 +1,16 @@
 class UserModel extends Observable {
 	constructor() {
     super();
-		// document.getElementById("easy").addEventListener("click", (e) => this.pressedEasy());
-		// document.getElementById("hard").addEventListener("click", (e) => this.pressedHard());
-		// document.getElementById("start").addEventListener("click", (e) => this.pressedStart());
+		document.getElementById("easy").addEventListener("click", (e) => this.pressedEasy());
+		document.getElementById("hard").addEventListener("click", (e) => this.pressedHard());
+		document.getElementById("start").addEventListener("click", (e) => this.pressedStart());
     this.name ;
-		this.version = "hard";
+		this.version = "easy";
+		this.startValue = false;
   }
 
 	pressedStart() {
-
-	}
-
-	clearInputValue(field) {
-		this.inputField = field;
+		this.startValue = true;
 		this.notify();
 	}
 
@@ -31,8 +28,8 @@ class UserModel extends Observable {
 		this.notify();
 	}
 
-	getInputField() {
-		return this.inputField;
+	getStartValue() {
+		return this.startValue;
 	}
 
 	getVersion() {
