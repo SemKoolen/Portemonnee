@@ -17,10 +17,16 @@ class UserView extends Observer {
       if(this.model.getStartValue()){
         document.querySelector('.mainpage').style.display = "block";
         document.querySelector('.prepage').style.display = "none";
+        this.reload_js('Controller.js');
       }
     } else {
-      document.querySelector('#startError').placeholder = "Geen naam ingevoerd!";
+      document.querySelector('#startError').innerHTML = "Geen naam ingevoerd!";
     }
+  }
+
+  reload_js(src) {
+    ('script[src="' + src + '"]').remove();
+    ('<script>').attr('src', src).appendTo('head');
   }
 
   updateButtons() {

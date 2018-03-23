@@ -2,7 +2,7 @@ class Controller {
   constructor() {
       this.user = new UserModel();
       this.userView = new UserView(this.user);
-      this.startGame();
+      if (this.startValue) { startGame() };
   }
 
   startGame(){
