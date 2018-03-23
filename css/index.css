@@ -1,0 +1,47 @@
+html, body {
+	margin:0;
+	padding:0;
+	height:100%
+}
+body {
+  background: url("images/money.jpg");
+  background-size: cover;
+}
+
+.centerdiv {
+  position:relative;
+	min-height:100%;
+	background:#f9f9f9;
+}
+.middle {
+  width: 30%;
+	height: 20%;
+	background-color: seagreen;
+	position:absolute;
+	left:0;
+	right:0;
+	top:0;
+	bottom:0;
+  margin:auto;
+}
+.middle input {
+  text-align: center;
+  width: 70%;
+  height: 40px;
+  font-size: 30px;
+  padding: 5px;
+  margin-top: 30px; 
+}
+.middle button {
+  width: 20%;
+  height: 30px;
+  margin-top: 30px; 
+}
+.middle h1 {
+  text-align: center; 
+}
+
+.middle input,button,h1 {
+  margin: 20px auto;
+  display: block;
+}
