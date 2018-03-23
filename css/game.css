@@ -4,14 +4,6 @@ html,body {
   height: 100%;
 }
 
-main.mainpage {
-  display: none;
-}
-main.prepage {
-  display: none;
-}
-
-
 main.mainpage div.leftsection {
   display: inline-block;
   vertical-align: top;
@@ -74,19 +66,20 @@ main.mainpage div.mainsection div.mainmiddle p#productprice {
 main.mainpage div.mainsection div.mainfooter {
   background-color: #FFE67C;
   margin-top: 10px;
+  min-height: 100px;
+  min-width: 100%;
   overflow: hidden;
   display: inline-block;
   grid-template-columns: auto auto auto auto auto auto auto auto auto auto auto auto;
   grid-template-areas:
   'coin' 'note';
 }
-
-main.mainpage div.mainsection div.mainfooter div p {
-  display: inline-block;
-}
 main.mainpage div.mainsection div.mainfooter div {
   display: inline-block;
   margin-top: 3px;
+}
+main.mainpage div.mainsection div.mainfooter div p {
+  display: inline-block;
 }
 main.mainpage div.mainsection div.mainfooter div > img {
   margin-right: 5px;
