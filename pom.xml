@@ -17,7 +17,7 @@
 		<Product_name>Lippenstift</Product_name>
 		<Product_price>3.40</Product_price>
 		<Product_picture>Lippenstift.png</Product_picture>
-	</Product>
+	</Product>	
 	<Product>
 		<Product_id>4</Product_id>
 		<Product_name>Koffie</Product_name>
