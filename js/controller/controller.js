@@ -2,19 +2,25 @@ class Controller {
   constructor() {
       this.user = new UserModel();
       this.userView = new UserView(this.user);
-      this.gameState = new GameStateModel();
-      this.gameView = new GameView(this.gameState);
-      if (this.startValue) { startGame() };
-    this.gameState.setNewQuestion();
-      
+      document.getElementById("easy").addEventListener("click", (e) => this.user.pressedEasy());
+      document.getElementById("hard").addEventListener("click", (e) => this.user.pressedHard());
+      document.getElementById("start").addEventListener("click", (e) => this.onStartHandler());
+  }
+
+  onStartHandler(){
+    this.user.pressedStart();
+    if (this.user.getStartValue()) {
+      this.startGame();
+    }
   }
 
   startGame(){
     this.register = new CashRegisterModel();
     this.counter = new CounterModel();
-    
     if (this.user.getVersion() == "easy") { this.gameView = new EasyView(this.counter, "easy")}
     else if (this.user.getVersion() == "hard") { this.gameView = new EasyView(this.counter, "hard")}
+    this.gameState = new GameStateModel();
+    this.gameView = new GameView(this.gameState);
     this.createListeners();
   }
 
