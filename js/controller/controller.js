@@ -2,6 +2,8 @@ class Controller {
   constructor() {
       this.user = new UserModel();
       this.userView = new UserView(this.user);
+      this.gameState = new GameStateModel();
+      this.gameView = new GameView(this.gameState);
       if (this.startValue) { startGame() };
   }
 
