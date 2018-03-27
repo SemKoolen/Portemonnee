@@ -1,9 +1,6 @@
 class UserModel extends Observable {
 	constructor() {
     super();
-		document.getElementById("easy").addEventListener("click", (e) => this.pressedEasy());
-		document.getElementById("hard").addEventListener("click", (e) => this.pressedHard());
-		document.getElementById("start").addEventListener("click", (e) => this.pressedStart());
     this.name ;
 		this.version = "easy";
 		this.startValue = false;
@@ -29,7 +26,9 @@ class UserModel extends Observable {
 	}
 
 	getStartValue() {
-		return this.startValue;
+		if (document.querySelector('#playername').value !== "") {
+			return this.startValue;
+		}
 	}
 
 	getVersion() {
