@@ -14,13 +14,13 @@ class GameStateModel extends Observable {
 
   setNewQuestion() {
     var request = new XMLHttpRequest();
-    request.open("GET", "../../pom.xml", false);
+    request.open("GET", "pom.xml", false);
     request.send();
     var xml = request.responseXML;
 
-    x = xml.getElementsByTagName("Product")[0];
-    y = x.childNodes[0];
-    z = y.nodeValue;
+    let x = xml.getElementsByTagName("Product")[0];
+    let y = x.childNodes[0];
+    let z = y.nodeValue;
     
   }
 

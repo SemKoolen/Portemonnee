@@ -21,6 +21,9 @@ class Controller {
     else if (this.user.getVersion() == "hard") { this.gameView = new EasyView(this.counter, "hard")}
     this.gameState = new GameStateModel();
     this.gameView = new GameView(this.gameState);
+
+    this.gameState.setNewQuestion();
+
     this.createListeners();
   }
 
