@@ -5,11 +5,14 @@ class Controller {
       this.gameState = new GameStateModel();
       this.gameView = new GameView(this.gameState);
       if (this.startValue) { startGame() };
+    this.gameState.setNewQuestion();
+      
   }
 
   startGame(){
     this.register = new CashRegisterModel();
     this.counter = new CounterModel();
+    
     if (this.user.getVersion() == "easy") { this.gameView = new EasyView(this.counter, "easy")}
     else if (this.user.getVersion() == "hard") { this.gameView = new EasyView(this.counter, "hard")}
     this.createListeners();
