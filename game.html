@@ -5,6 +5,7 @@
   <title>Portemonnee</title>
   <link rel="stylesheet" type="text/css" media="screen" href="css/main.css" />
   <link rel="stylesheet" type="text/css" media="screen" href="css/game.css" />
+  <link rel="stylesheet" type="text/css" media="screen" href="css/prepage.css" />
   <script src="js/start.js"></script>
   <script src="js/controller/Controller.js"></script>
   <script src="js/model/Observable.js"></script>
@@ -13,13 +14,27 @@
   <script src="js/model/UserModel.js"></script>
   <script src="js/view/Observer.js"></script>
   <script src="js/view/EasyView.js"></script>
-  <script src="js/view/HardView.js"></script>
+  <script src="js/view/UserView.js"></script>
 </head>
 <body>
   <header>
     <img id="header" src="images/header.jpg" alt="headerimage">
   </header>
-  <main>
+  <main class="prepage">
+    <div class="centerdiv">
+      <div class="middle">
+        <h1>Welkom bij Portemonnee</h1>
+        <input id="playername" type="text" placeholder="Vul hier je naam in">
+          <div class="difficulty">
+            <button class="active" id="easy">Makkelijk</button>
+            <button id="hard">Moeilijk</button>
+          </div>
+          <p id="startError"></p>
+        <button id="start">Start</button>
+      </div>
+    </div>
+  </main>
+  <main class="mainpage">
     <div class="leftsection">
       <h1>Kassa</h1>
       <p id="userTotal">hallo</p>
@@ -37,12 +52,6 @@
       <div class="mainfooter">
         <div class="coin" id="counter1cent"><img id="subtract1cent" class="coin" src="images/Geld/1cent.png" alt="1cent"><p></p></div>
         <div class="coin" id="counter2cent"><img id="subtract2cent" class="coin" src="images/Geld/2cent.png" alt="2cent"><p></p></div>
-
-        <!-- <div class="coin" id="counter1cent"><span>hoi</span></div>
-        <div class="coin" id="counter2cent"></div> -->
-
-        
-
         <div class="coin" id="counter5cent"><img id="subtract5cent" class="coin" src="images/Geld/5cent.png" alt="5cent"><p></p></div>
         <div class="coin" id="counter10cent"><img id="subtract10cent" class="coin" src="images/Geld/10cent.png" alt="10cent"><p></p></div>
         <div class="coin" id="counter20cent"><img id="subtract20cent" class="coin" src="images/Geld/20cent.png" alt="20cent"><p></p></div>

@@ -1,38 +1,39 @@
-body {
+html,body {
   text-align: center;
   background-color: #969D9A;
+  height: 100%;
 }
 
-main div.leftsection {
+main.mainpage div.leftsection {
   display: inline-block;
   vertical-align: top;
   width: 15%;
   background-color: #FFA37C;
 }
-main div.leftsection h1 {
+main.mainpage div.leftsection h1 {
   height: 67px;
 }
 
-main div.mainsection {
+main.mainpage div.mainsection {
   display: inline-block;
   vertical-align: top;
   width: 60%;
 }
-main div.mainsection div.maintop {
+main.mainpage div.mainsection div.maintop {
   background-color: #FFE67C;
   height: 67px;
 }
-main div.mainsection div.maintop > h1, button {
+main.mainpage div.mainsection div.maintop > h1, button {
   display: inline-block;
   margin: 1% 10px 0 10px;
 }
-main div.mainsection div.maintop h1#questionnumber {
+main.mainpage div.mainsection div.maintop h1#questionnumber {
   float: left;
 }
-main div.mainsection div.maintop h1#timer {
+main.mainpage div.mainsection div.maintop h1#timer {
   margin-right: 5%;
 }
-main div.mainsection div.maintop button {
+main.mainpage div.mainsection div.maintop button {
   width: 100px;
   height: 40px;
   font-size: 20px;
@@ -40,91 +41,82 @@ main div.mainsection div.maintop button {
   border: 2px solid #00834E;
   float: right;
 }
-main div.mainsection div.maintop button:hover {
+main.mainpage div.mainsection div.maintop button:hover {
   cursor: pointer;
   opacity: 0.8;
   transition: 5ms;
 }
 
-main div.mainsection div.mainmiddle {
+main.mainpage div.mainsection div.mainmiddle {
   background-color: #7868BE;
   margin-top: 10px;
   padding: 11.4%;
 }
-main div.mainsection div.mainmiddle img {
+main.mainpage div.mainsection div.mainmiddle img {
   width: 35%;
   min-width: 100px;
 }
-main div.mainsection div.mainmiddle p#productprice {
+main.mainpage div.mainsection div.mainmiddle p#productprice {
   font-size: 40px;
   border: 2px solid #969D9A;
   background-color: #E6E4DC;
   width: 130px;
 }
 
-main div.mainsection div.mainfooter {
+main.mainpage div.mainsection div.mainfooter {
   background-color: #FFE67C;
   margin-top: 10px;
+  min-height: 100px;
+  min-width: 100%;
   overflow: hidden;
   display: inline-block;
   grid-template-columns: auto auto auto auto auto auto auto auto auto auto auto auto;
   grid-template-areas:
   'coin' 'note';
 }
-
-main div.mainsection div.mainfooter div#counter1cent {
-  background: url("images/Geld/1cent.png");
-  background-size: cover;
-  width: 70px;
-  height: 100px;
-}
-
-
-
-
-main div.mainsection div.mainfooter div p {
-  display: inline-block;
-}
-main div.mainsection div.mainfooter div {
+main.mainpage div.mainsection div.mainfooter div {
   display: inline-block;
   margin-top: 3px;
 }
-main div.mainsection div.mainfooter div > img {
+main.mainpage div.mainsection div.mainfooter div p {
+  display: inline-block;
+}
+main.mainpage div.mainsection div.mainfooter div > img {
   margin-right: 5px;
 }
-main div.mainsection div.mainfooter div > img:hover {
+main.mainpage div.mainsection div.mainfooter div > img:hover {
   cursor: pointer;
   opacity: 0.8;
   transition: 5ms;
 }
-main div.mainsection div.mainfooter img.coin {
+main.mainpage div.mainsection div.mainfooter img.coin {
   width: 70px;
 }
-main div.mainsection div.mainfooter img.note {
+main.mainpage div.mainsection div.mainfooter img.note {
   width: 120px;
 }
 
-main div.rightsection {
+main.mainpage div.rightsection {
   display: inline-block;
   vertical-align: top;
   width: 15%;
 }
-main div.rightsection div.righttop {
+main.mainpage div.rightsection div.righttop {
   height: 67px;
   background-color: #FFA37C;
 }
-main div.rightsection div.rightmoney {
+main.mainpage div.rightsection div.rightmoney {
   margin-top: 10px;
   background-color: orange;
 }
-main div.rightsection div.rightmoney img:hover {
+main.mainpage div.rightsection div.rightmoney img:hover {
   cursor: pointer;
   opacity: 0.8;
   transition: 5ms;
 }
-main div.rightsection div.rightmoney img.coin {
+main.mainpage div.rightsection div.rightmoney img.coin {
   width: 64px;
 }
-main div.rightsection div.rightmoney img.note {
+main.mainpage div.rightsection div.rightmoney img.note {
   width: 80%;
 }
