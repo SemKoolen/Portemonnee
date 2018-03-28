@@ -20,7 +20,7 @@ class GameStateModel extends Observable {
   setNewQuestion() {
     if (this.questionNumbers.length <= 9 ) {
       var random = Math.floor((Math.random() * 21) + 1);
-      if (this.questionNumbers.includes(random)) {
+      while (this.questionNumbers.includes(random)) {
         random = Math.floor((Math.random() * 21) + 1);
       }
       this.questionNumbers.push(random);
@@ -33,8 +33,6 @@ class GameStateModel extends Observable {
       this.price = product.getElementsByTagName("Product_price")[0].childNodes[0].nodeValue;
       this.image = product.getElementsByTagName("Product_picture")[0].childNodes[0].nodeValue;
       console.log(this.id + ": " + this.name + " " + this.price + " " + this.image);
-
-
       this.notify();
     } else {
       console.log("10 VRAGEN GEDAAN");
