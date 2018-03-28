@@ -1,6 +1,103 @@
 html,body {
   text-align: center;
   background-color: #969D9A;
+}
+
+header {
+  grid-area: header;
+}
+header img {
+  width: 100%;
+}
+
+.wrapper {
+  display: grid;
+  grid-template-areas:
+  "lefttop middletop middletop righttop"
+  "leftmain middlemain middlemain rightmain"
+  ". middlefooter middlefooter .";
+  grid-template-columns: repeat(4, 1fr); 
+  grid-template-rows: repeat(3, auto);
+  grid-column-gap: 10%;
+  grid-row-gap: 5em;
+  margin: 0 2%;
+}
+.wrapper > div {
+  border-radius: 10px;
+  border: 1px solid grey;
+}
+
+.lefttop {
+  grid-area: lefttop;
+  background: tomato;
+  align-items: center;
+}
+
+.leftmain {
+  grid-area: leftmain;
+  background: orange;
+}
+
+.middletop {
+  grid-area: middletop;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  align-items: center;
+  background: #FFE67C;
+}
+
+.middlemain {
+  grid-area: middlemain;
+  background: turquoise;
+}
+.middlemain img {
+  width: 40%;
+  min-width: 100px;
+  margin-top: 2%;
+}
+.middlemain p {
+  border: 2px solid black;
+  width: 10%;
+  font-size: 90%;
+  margin: 5%;
+  padding: 10px;
+  background-color: lightslategrey;
+  font-weight: bold;
+}
+
+.middlefooter {
+  grid-area: middlefooter;
+  padding: 10px;
+  background: #FFE67C;
+}
+.middlefooter img.coin {
+  width: 5em;
+}
+.middlefooter img.note {
+  width: 10em;
+}
+
+.righttop {
+  grid-area: righttop;
+  background: tomato;
+}
+
+.rightmain {
+  grid-area: rightmain;
+  background: orange;
+}
+.rightmain img.coin {
+  width: 4em;
+}
+.rightmain img.note {
+  width: 7em;
+}
+
+
+
+/* html,body {
+  text-align: center;
+  background-color: #969D9A;
   height: 100%;
 }
 
@@ -119,4 +216,4 @@ main.mainpage div.rightsection div.rightmoney img.coin {
 }
 main.mainpage div.rightsection div.rightmoney img.note {
   width: 80%;
-}
+} */

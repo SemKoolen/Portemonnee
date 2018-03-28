@@ -2,7 +2,7 @@ class UserView extends Observer {
   constructor(model) {
     super(model);
     this.model.addObserver(this);
-    document.querySelector('.mainpage').style.display = "none";
+    document.querySelector('.wrapper').style.display = "none";
     document.querySelector('.prepage').style.display = "block";
   }
 
@@ -14,7 +14,7 @@ class UserView extends Observer {
 
   checkStart() {
       if(this.model.getStartValue()){
-        document.querySelector('.mainpage').style.display = "block";
+        document.querySelector('.wrapper').style.display = "grid";
         document.querySelector('.prepage').style.display = "none";
       } else if (document.querySelector('#playername').value == ""){
       document.querySelector('#startError').innerHTML = "Geen naam ingevoerd!";
