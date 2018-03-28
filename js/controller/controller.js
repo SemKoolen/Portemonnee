@@ -4,6 +4,7 @@ class Controller {
       this.userView = new UserView(this.user);
       document.getElementById("easy").addEventListener("click", (e) => this.user.pressedEasy());
       document.getElementById("hard").addEventListener("click", (e) => this.user.pressedHard());
+      document.getElementById("next").addEventListener("click", (e) => this.gameState.pressedNext());
       document.getElementById("start").addEventListener("click", (e) => this.onStartHandler());
   }
 

@@ -4,127 +4,127 @@
 		<Product_id>1</Product_id>
 		<Product_name>Zonnebril</Product_name>
 		<Product_price>0.55</Product_price>
-		<Product_picture>Zonnebril1.png</Product_picture>
+		<Product_picture>images/Producten/Zonnebril1.png</Product_picture>
 	</Product>
 	<Product>
 		<Product_id>2</Product_id>
 		<Product_name>Brood</Product_name>
 		<Product_price>1.30</Product_price>
-		<Product_picture>Brood1.png</Product_picture>
+		<Product_picture>images/Producten/Brood1.png</Product_picture>
 	</Product>
 	<Product>
 		<Product_id>3</Product_id>
 		<Product_name>Lippenstift</Product_name>
 		<Product_price>3.40</Product_price>
-		<Product_picture>Lippenstift.png</Product_picture>
+		<Product_picture>images/Producten/Lippenstift.png</Product_picture>
 	</Product>	
 	<Product>
 		<Product_id>4</Product_id>
 		<Product_name>Koffie</Product_name>
 		<Product_price>1.70</Product_price>
-		<Product_picture>Koffie1.png</Product_picture>
+		<Product_picture>images/Producten/Koffie1.png</Product_picture>
 	</Product>
 	<Product>
 		<Product_id>5</Product_id>
 		<Product_name>Tompouce</Product_name>
 		<Product_price>2.25</Product_price>
-		<Product_picture>Tompouce1.png</Product_picture>
+		<Product_picture>images/Producten/Tompouce1.png</Product_picture>
 	</Product>
 	<Product>
 		<Product_id>6</Product_id>
 		<Product_name>Croissant</Product_name>
 		<Product_price>0.60</Product_price>
-		<Product_picture>Croissant1.png</Product_picture>
+		<Product_picture>images/Producten/Croissant1.png</Product_picture>
 	</Product>
 	<Product>
 		<Product_id>7</Product_id>
 		<Product_name>Softijs</Product_name>
 		<Product_price>0.80</Product_price>
-		<Product_picture>Ijs1.png</Product_picture>
+		<Product_picture>images/Producten/Ijs1.png</Product_picture>
 	</Product>
 	<Product>
 		<Product_id>8</Product_id>
 		<Product_name>Druiven</Product_name>
 		<Product_price>1.90</Product_price>
-		<Product_picture>Druiven1.png</Product_picture>
+		<Product_picture>images/Producten/Druiven1.png</Product_picture>
 	</Product>
 	<Product>
 		<Product_id>9</Product_id>
 		<Product_name>Koekjes</Product_name>
 		<Product_price>1.20</Product_price>
-		<Product_picture>Koekje1.png</Product_picture>
+		<Product_picture>images/Producten/Koekje1.png</Product_picture>
 	</Product>
 	<Product>
 		<Product_id>10</Product_id>
 		<Product_name>Stroopwafels</Product_name>
 		<Product_price>1.80</Product_price>
-		<Product_picture>Stroopwafel1.png</Product_picture>
+		<Product_picture>images/Producten/Stroopwafel1.png</Product_picture>
 	</Product>
 	<Product>
 		<Product_id>11</Product_id>
 		<Product_name>Pannenkoekenmix</Product_name>
 		<Product_price>1.55</Product_price>
-		<Product_picture>Pannekoekenmix1.png</Product_picture>
+		<Product_picture>images/Producten/Pannekoekenmix1.png</Product_picture>
 	</Product>
 	<Product>
 		<Product_id>12</Product_id>
 		<Product_name>Hagelslag</Product_name>
 		<Product_price>0.95</Product_price>
-		<Product_picture>Hagelslag1.png</Product_picture>
+		<Product_picture>images/Producten/Hagelslag1.png</Product_picture>
 	</Product>
 	<Product>
 		<Product_id>13</Product_id>
 		<Product_name>Pizza</Product_name>
 		<Product_price>4.70</Product_price>
-		<Product_picture>Pizza1.png</Product_picture>
+		<Product_picture>images/Producten/Pizza1.png</Product_picture>
 	</Product>
 	<Product>
 		<Product_id>14</Product_id>
 		<Product_name>Pet</Product_name>
 		<Product_price>8.60</Product_price>
-		<Product_picture>Cap1.png</Product_picture>
+		<Product_picture>images/Producten/Cap1.png</Product_picture>
 	</Product>
 	<Product>
 		<Product_id>15</Product_id>
 		<Product_name>Shampoo</Product_name>
 		<Product_price>3.90</Product_price>
-		<Product_picture>Shampoo1.png</Product_picture>
+		<Product_picture>images/Producten/Shampoo1.png</Product_picture>
 	</Product>
 	<Product>
 		<Product_id>16</Product_id>
 		<Product_name>Chocola</Product_name>
 		<Product_price>2.35</Product_price>
-		<Product_picture>Chocola1.png</Product_picture>
+		<Product_picture>images/Producten/Chocola1.png</Product_picture>
 	</Product>
 	<Product>
 		<Product_id>17</Product_id>
 		<Product_name>Chips</Product_name>
 		<Product_price>1.30</Product_price>
-		<Product_picture>Chips1.png</Product_picture>
+		<Product_picture>images/Producten/Chips1.png</Product_picture>
 	</Product>
 	<Product>
 		<Product_id>18</Product_id>
 		<Product_name>Oordopjes</Product_name>
 		<Product_price>14.50</Product_price>
-		<Product_picture>Oordop1.png</Product_picture>
+		<Product_picture>images/Producten/Oordop1.png</Product_picture>
 	</Product>
 	<Product>
 		<Product_id>19</Product_id>
 		<Product_name>USB</Product_name>
 		<Product_price>13.90</Product_price>
-		<Product_picture>USB1.png</Product_picture>
+		<Product_picture>images/Producten/USB1.png</Product_picture>
 	</Product>
 	<Product>
 		<Product_id>20</Product_id>
 		<Product_name>Afwasmiddel</Product_name>
 		<Product_price>2.50</Product_price>
-		<Product_picture>Afwasmiddel1.png</Product_picture>
+		<Product_picture>images/Producten/Afwasmiddel1.png</Product_picture>
 	</Product>
 	<Product>
 		<Product_id>21</Product_id>
 		<Product_name>Melk</Product_name>
 		<Product_price>1.78</Product_price>
-		<Product_picture>Melk1.png</Product_picture>
+		<Product_picture>images/Producten/Melk1.png</Product_picture>
 	</Product>
 	<Product>
 		<Product_id>22</Product_id>
