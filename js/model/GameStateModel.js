@@ -20,6 +20,7 @@ class GameStateModel extends Observable {
   }
 
   setNewQuestion() {
+    document.getElementById("next").disabled = true;
     var random = Math.floor((Math.random() * 21) + 1);
     while (this.questionNumbers.includes(random)) {
       random = Math.floor((Math.random() * 21) + 1);
@@ -37,19 +38,7 @@ class GameStateModel extends Observable {
     this.notify();
   }
 
-  pressedNext() {
-    if (this.questionNumbers.length <= 9 && this.questionAnswered) { //++ check questionanswered
-      this.questionAnswered = false;
-      this.setNewQuestion();
-    } else if (!this.questionAnswered) {
-      window.alert("Je hebt de vraag nog niet beantwoord.");
-    } else {
-      //++ 10 vragen gehad event
-      console.log("10 vragen gedaan");
-    }
-  }
-
-  pressedConfirm() {
-    this.questionAnswered = true;
+  noQuestionLeft() {
+    //++ LAAD EINDPAGINA HIER
   }
 }

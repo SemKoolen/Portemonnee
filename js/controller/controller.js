@@ -4,8 +4,8 @@ class Controller {
       this.userView = new UserView(this.user);
       document.getElementById("easy").addEventListener("click", (e) => this.user.pressedEasy());
       document.getElementById("hard").addEventListener("click", (e) => this.user.pressedHard());
-      document.getElementById("next").addEventListener("click", (e) => this.gameState.pressedNext());
-      document.getElementById("confirm").addEventListener("click", (e) => this.gameState.pressedConfirm());
+      document.getElementById("next").addEventListener("click", (e) => this.pressedNext());
+      document.getElementById("confirm").addEventListener("click", (e) => this.pressedConfirm());
       document.getElementById("start").addEventListener("click", (e) => this.onStartHandler());
   }
 
@@ -51,6 +51,19 @@ class Controller {
   //The method also uses the amount to figure out wich coin was clicked.
   onClickMoney(action, amount) {
     this.counter.counterHandler(action, amount);
+  }
+
+  pressedNext() {
+    if (this.gameState.questionNumbers.length <= 9) {
+      this.gameState.setNewQuestion();
+    }
+    if (this.gameState.questionNumbers.length > 10) {
+      this.gameState.noQuestionLeft();
+    }
+  }
+
+  pressedConfirm() {
+    document.getElementById("next").disabled = false;
   }
 
 }
