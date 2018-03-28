@@ -1,15 +1,1 @@
-(html > head)
-<script src="js/start.js"></script>
-<script src="js/controller/Controller.js"></script>
-<script src="js/model/Observable.js"></script>
-<script src="js/model/KassaModel.js"></script>
-<script src="js/model/ToonbankModel.js"></script>
-<script src="js/model/SpelerModel.js"></script>
-<script src="js/view/Observer.js"></script>
-<script src="js/view/EasyView.js"></script>
-<script src="js/view/HardView.js"></script>
-
-
-
-right:
-img centen en biljetten 5 10 20 50
+--allow-file-access-from-files

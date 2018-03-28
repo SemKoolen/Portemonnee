@@ -16,7 +16,7 @@ class EasyView extends Observer {
     super.update();
     this.checkCounterDisplay();
     this.updateCoinAmount();
-    this.displayTotal();
+    // this.displayTotal();
   }
 
   removeAllCounterObjects() {
@@ -37,7 +37,7 @@ class EasyView extends Observer {
   updateCoinAmount() {
     let object = this.model.getCurrentCoinObject();
     let amount = this.model.getCurrentCoinAmount();
-    let listNodes = document.getElementById(object).getElementsByTagName("p");
+    let listNodes = document.getElementById(object).getElementsByTagName("font");
     let pElement = listNodes[0];
     pElement.innerHTML  = amount;
   }
