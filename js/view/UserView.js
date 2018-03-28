@@ -16,6 +16,8 @@ class UserView extends Observer {
       if(this.model.getStartValue()){
         document.querySelector('.wrapper').style.display = "grid";
         document.querySelector('.prepage').style.display = "none";
+        this.model.saveName();
+        document.querySelector('#walletname').innerHTML = this.model.getName();
       } else if (document.querySelector('#playername').value == ""){
       document.querySelector('#startError').innerHTML = "Geen naam ingevoerd!";
     }
