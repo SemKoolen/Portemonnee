@@ -17,16 +17,16 @@ class Controller {
   }
 
   startGame(){
-    this.register = new CashRegisterModel();
     this.counter = new CounterModel();
     if (this.user.getVersion() == "easy") {
       this.gameView = new EasyView(this.counter, "easy")
-      this.registerView = new CashRegisterView(this.register, "easy")
+      this.register = new CashRegisterModel("easy");
     }
     else if (this.user.getVersion() == "hard") {
       this.gameView = new EasyView(this.counter, "hard")
-      this.registerView = new CashRegisterView(this.register, "hard")
+      this.register = new CashRegisterModel("easy");
     }
+    this.registerView = new CashRegisterView(this.register)
     this.gameState = new GameStateModel();
     this.gameView = new GameView(this.gameState);
 
@@ -64,6 +64,9 @@ class Controller {
 
   pressedConfirm() {
     document.getElementById("next").disabled = false;
+    this.register.saveProductPrice(this.gameState.price);
+    this.register.saveAmountPayed(this.counter.totalAmount);
+    this.register.changePayedStatus(true);
   }
 
 }
