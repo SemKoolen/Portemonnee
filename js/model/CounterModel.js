@@ -1,8 +1,12 @@
 class CounterModel extends Observable {
 	constructor() {
 		super();
-		this.totalAmount = 0;
 		this.currentCoinObject;
+		this.reset();
+	}
+
+	reset(){
+		this.totalAmount = 0;
 		this.createCoinArray();
 	}
 
