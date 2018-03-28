@@ -17,7 +17,7 @@
 		<Product_name>Lippenstift</Product_name>
 		<Product_price>3.40</Product_price>
 		<Product_picture>images/Producten/Lippenstift1.png</Product_picture>
-	</Product>
+	</Product>	
 	<Product>
 		<Product_id>4</Product_id>
 		<Product_name>Koffie</Product_name>
@@ -128,9 +128,9 @@
 	</Product>
 	<Product>
 		<Product_id>22</Product_id>
-		<Product_name></Product_name>
-		<Product_price></Product_price>
-		<Product_picture></Product_picture>
+		<Product_name>Pen</Product_name>
+		<Product_price>0.88</Product_price>
+		<Product_picture>images/Producten/Pen1.png</Product_picture>
 	</Product>
 	<Product>
 		<Product_id>23</Product_id>
@@ -239,7 +239,7 @@
 		<Product_name>Tent</Product_name>
 		<Product_price>83.99</Product_price>
 		<Product_picture>Tent1.png</Product_picture>
-	</Product>
+	</Product>	
 	<Product>
 		<Product_id>41</Product_id>
 		<Product_name>Tas</Product_name>
