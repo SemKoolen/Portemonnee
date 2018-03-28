@@ -24,9 +24,9 @@ class GameStateModel extends Observable {
         random = Math.floor((Math.random() * 21) + 1);
       }
       this.questionNumbers.push(random);
-  
+
       let product = this.products.children[random - 1];
-  
+
       // Access each of the data values.
       this.id = product.getElementsByTagName("Product_id")[0].childNodes[0].nodeValue;
       this.name = product.getElementsByTagName("Product_name")[0].childNodes[0].nodeValue;
