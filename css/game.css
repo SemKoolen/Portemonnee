@@ -83,6 +83,11 @@ header img {
   grid-area: righttop;
   background: tomato;
 }
+.righttop #walletname {
+  color: blue;
+  font-size: 22px;
+}
+
 
 .rightmain {
   grid-area: rightmain;
