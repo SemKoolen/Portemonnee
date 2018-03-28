@@ -1,4 +1,4 @@
-class HardView extends Observer {
+class CashRegisterView extends Observer {
   constructor(model) {
     super(model);
     this.model.addObserver(this);
