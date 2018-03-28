@@ -1,5 +1,5 @@
 class CashRegisterView extends Observer {
-  constructor(model) {
+  constructor(model, version) {
     super(model);
     this.model.addObserver(this);
   }
@@ -8,8 +8,8 @@ class CashRegisterView extends Observer {
 
   }
 
-  displayStatus(){
-    
+  displayPayedStatus(){
+
   }
 
   displayPrice(){
