@@ -12,35 +12,44 @@ class GameStateModel extends Observable {
 
     this.questionNumbers = [];
 
+    this.questionAnswered = false;
+
     // this.setQuestionNumbers();
 
 
   }
 
   setNewQuestion() {
-    if (this.questionNumbers.length <= 9 ) {
-      var random = Math.floor((Math.random() * 21) + 1);
-      while (this.questionNumbers.includes(random)) {
-        random = Math.floor((Math.random() * 21) + 1);
-      }
-      this.questionNumbers.push(random);
-  
-      let product = this.products.children[random - 1];
-  
-      // Access each of the data values.
-      this.id = product.getElementsByTagName("Product_id")[0].childNodes[0].nodeValue;
-      this.name = product.getElementsByTagName("Product_name")[0].childNodes[0].nodeValue;
-      this.price = product.getElementsByTagName("Product_price")[0].childNodes[0].nodeValue;
-      this.image = product.getElementsByTagName("Product_picture")[0].childNodes[0].nodeValue;
-      console.log(this.id + ": " + this.name + " " + this.price + " " + this.image);
-      this.notify();
-    } else {
-      console.log("10 VRAGEN GEDAAN");
+    var random = Math.floor((Math.random() * 21) + 1);
+    while (this.questionNumbers.includes(random)) {
+      random = Math.floor((Math.random() * 21) + 1);
     }
+    this.questionNumbers.push(random);
+
+    let product = this.products.children[random - 1];
+
+    // Access each of the data values.
+    this.id = product.getElementsByTagName("Product_id")[0].childNodes[0].nodeValue;
+    this.name = product.getElementsByTagName("Product_name")[0].childNodes[0].nodeValue;
+    this.price = product.getElementsByTagName("Product_price")[0].childNodes[0].nodeValue;
+    this.image = product.getElementsByTagName("Product_picture")[0].childNodes[0].nodeValue;
+    console.log(this.id + ": " + this.name + " " + this.price + " " + this.image);
+    this.notify();
   }
 
   pressedNext() {
-    this.setNewQuestion();
+    if (this.questionNumbers.length <= 9 && this.questionAnswered) { //++ check questionanswered
+      this.questionAnswered = false;
+      this.setNewQuestion();
+    } else if (!this.questionAnswered) {
+      window.alert("Je hebt de vraag nog niet beantwoord.");
+    } else {
+      //++ 10 vragen gehad event
+      console.log("10 vragen gedaan");
+    }
   }
 
+  pressedConfirm() {
+    this.questionAnswered = true;
+  }
 }

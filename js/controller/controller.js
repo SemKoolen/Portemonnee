@@ -5,6 +5,7 @@ class Controller {
       document.getElementById("easy").addEventListener("click", (e) => this.user.pressedEasy());
       document.getElementById("hard").addEventListener("click", (e) => this.user.pressedHard());
       document.getElementById("next").addEventListener("click", (e) => this.gameState.pressedNext());
+      document.getElementById("confirm").addEventListener("click", (e) => this.gameState.pressedConfirm());
       document.getElementById("start").addEventListener("click", (e) => this.onStartHandler());
   }
 
