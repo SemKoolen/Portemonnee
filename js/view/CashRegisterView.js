@@ -5,5 +5,26 @@ class CashRegisterView extends Observer {
   }
 
   update() {
+
+  }
+
+  displayStatus(){
+    
+  }
+
+  displayPrice(){
+
+  }
+
+  displayAmountPayed(){
+
+  }
+
+  displayResult(){
+
+  }
+
+  displayChange(){
+
   }
 }
