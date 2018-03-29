@@ -13,7 +13,10 @@ class GameStateModel extends Observable {
     this.xml = this.request.responseXML;
     this.products = this.xml.childNodes[0];
 
+    this.questiondone = false;
+
     this.questionNumbers = [];
+    this.prices = [];
 
     this.time = 60;
   }
@@ -54,12 +57,15 @@ class GameStateModel extends Observable {
     this.id = product.getElementsByTagName("Product_id")[0].childNodes[0].nodeValue;
     this.name = product.getElementsByTagName("Product_name")[0].childNodes[0].nodeValue;
     this.price = product.getElementsByTagName("Product_price")[0].childNodes[0].nodeValue;
+    this.prices.push(price);
     this.image = product.getElementsByTagName("Product_picture")[0].childNodes[0].nodeValue;
     console.log(this.id + ": " + this.name + " " + this.price + " " + this.image);
     this.notify();
   }
 
   noQuestionLeft() {
-    //++ LAAD EINDPAGINA HIER
+    this.questiondone = true;
+    console.log("noquestions");
+    this.notify();
   }
 }

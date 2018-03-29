@@ -1,4 +1,14 @@
-/* .postpage {
+.postpage {
   display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-template-areas:
+  ". table table .";
+}
 
-} */
+table {
+  grid-area: table;
+  justify-self: center;
+  width: 70%;
+  border: 2px solid black;
+}
+

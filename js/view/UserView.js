@@ -15,6 +15,7 @@ class UserView extends Observer {
   checkStart() {
       if(this.model.getStartValue()){
         document.querySelector('.wrapper').style.display = "grid";
+        document.querySelector('.postpage').style.display = "none";
         document.querySelector('.prepage').style.display = "none";
         this.model.saveName();
         document.querySelector('#walletname').innerHTML = this.model.getName();

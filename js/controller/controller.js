@@ -64,7 +64,7 @@ class Controller {
       // this.gameView.removeAllCounterObjects(); 
       this.register.changePayedStatus(false);
     }
-    if (this.gameState.questionNumbers.length > 10) {
+    if (this.gameState.questionNumbers.length >= 10) {
       this.gameState.noQuestionLeft();
     }
   }

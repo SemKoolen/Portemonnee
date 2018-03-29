@@ -37,7 +37,6 @@ class CashRegisterModel extends Observable {
 			this.answerArray[x] = 0;
 		}
 		console.log(this.answerArray.length);
-		debugger;
 
 		while (this.price > 0) {
 			switch(true) {

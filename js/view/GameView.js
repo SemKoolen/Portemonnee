@@ -10,6 +10,7 @@ class GameView extends Observer {
     this.setProductImage();
     this.setQuestionNumber();
     this.setTimer();
+    this.startPostPage();
   }
 
   setTimer() {
@@ -34,5 +35,19 @@ class GameView extends Observer {
 
   setQuestionNumber() {
     document.querySelector("#question").innerHTML = "Vraag: " + this.model.questionNumbers.length + "/10";
+  }
+
+  startPostPage() {
+    if (this.model.questiondone === true) {
+      console.log(this.model.prices);
+      console.log(this.model.prices.length);
+      document.querySelector('.wrapper').style.display = "none";
+      document.querySelector('.prepage').style.display = "none";
+      document.querySelector('.postpage').style.display = "grid";
+      for (let i = 0; i < this.model.prices.length; i++) {
+        document.querySelector("#price"+(i+1)).innerHTML = this.model.prices[i];
+      }
+    }
+    
   }
 }
