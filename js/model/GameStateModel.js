@@ -1,6 +1,9 @@
 class GameStateModel extends Observable {
-  constructor() {
+  constructor(controller) {
     super();
+    //Used to execute a method when the time is 0
+    this.controller = controller;
+
     this.questionNumber = 1;
 
     this.request = new XMLHttpRequest();
@@ -11,7 +14,6 @@ class GameStateModel extends Observable {
     this.products = this.xml.childNodes[0];
 
     this.questionNumbers = [];
-    this.questionAnswered = false;
 
     this.time = 60;
   }
@@ -21,14 +23,27 @@ class GameStateModel extends Observable {
   }
 
   setTimer() {
-    set
+    this.timeinterval = setInterval(this.timeInterval.bind(this), 1000);
+  }
+
+  timeInterval() {
+    this.time--;
+    this.notify();
+    if (this.time <= 0) {
+      clearInterval(this.timeinterval);
+      this.controller.pressedConfirm();
+    }
+  }
+
+  stopIntervalTimer() {
+    clearInterval(this.timeinterval);
   }
 
   setNewQuestion() {
     document.getElementById("next").disabled = true;
     var random = Math.floor((Math.random() * 21) + 1);
 
-    while (this.questionNumbers.includes(random) ) {
+    while (this.questionNumbers.includes(random)) {
       random = Math.floor((Math.random() * 21) + 1);
     }
     this.questionNumbers.push(random);

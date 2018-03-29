@@ -16,7 +16,7 @@ class Controller {
     }
   }
 
-  startGame(){
+  startGame() {
     this.counter = new CounterModel();
     if (this.user.getVersion() == "easy") {
       this.gameView = new EasyView(this.counter, "easy")
@@ -27,10 +27,11 @@ class Controller {
       this.register = new CashRegisterModel("easy");
     }
     this.registerView = new CashRegisterView(this.register)
-    this.gameState = new GameStateModel();
+    this.gameState = new GameStateModel(this);
     this.gameView = new GameView(this.gameState);
 
     this.gameState.setNewQuestion();
+    this.gameState.setTimer();
 
     this.createListeners();
   }
@@ -52,12 +53,15 @@ class Controller {
   onClickMoney(action, amount) {
     this.counter.counterHandler(action, amount);
   }
-  
+
 
   pressedNext() {
     if (this.gameState.questionNumbers.length <= 9) {
       this.gameState.setNewQuestion();
-      // this.gameView.removeAllCounterObjects();
+      this.gameState.resetTimer();
+      this.gameState.setTimer();
+
+      // this.gameView.removeAllCounterObjects(); 
       this.register.changePayedStatus(false);
     }
     if (this.gameState.questionNumbers.length > 10) {
@@ -66,9 +70,11 @@ class Controller {
   }
 
   pressedConfirm() {
-    document.getElementById("next").disabled = false; 
+    document.getElementById("next").disabled = false;
     // disable coin adding/removing
-    
+
+    this.gameState.stopIntervalTimer();
+
     this.register.saveProductPrice(this.gameState.price);
     this.register.saveAmountPayed(this.counter.totalAmount);
     this.register.changePayedStatus(true);

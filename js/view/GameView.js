@@ -9,9 +9,16 @@ class GameView extends Observer {
     this.setProductName();
     this.setProductImage();
     this.setQuestionNumber();
+    this.setTimer();
   }
 
-  
+  setTimer() {
+    if (this.model.time < 10) {
+      document.querySelector("#timer").innerHTML = "0:0" + this.model.time;
+    } else {
+      document.querySelector("#timer").innerHTML = "0:" + this.model.time;
+    }
+  }
 
   setProductPrice() {
     document.querySelector('#productprice').innerHTML = "€ " + this.model.price;
