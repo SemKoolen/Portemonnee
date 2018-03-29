@@ -52,7 +52,7 @@ class Controller {
   onClickMoney(action, amount) {
     this.counter.counterHandler(action, amount);
   }
-  
+
 
   pressedNext() {
     if (this.gameState.questionNumbers.length <= 9) {
@@ -66,12 +66,13 @@ class Controller {
   }
 
   pressedConfirm() {
-    document.getElementById("next").disabled = false; 
+    document.getElementById("next").disabled = false;
     // disable coin adding/removing
-    
+
     this.register.saveProductPrice(this.gameState.price);
     this.register.saveAmountPayed(this.counter.totalAmount);
     this.register.changePayedStatus(true);
+    this.register.checkAnswer(this.counter.coinArray);
   }
 
 }

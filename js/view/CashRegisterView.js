@@ -3,6 +3,7 @@ class CashRegisterView extends Observer {
     super(model);
     this.model.addObserver(this);
     this.payedStatus = false;
+    this.reset();
   }
 
   update() {
@@ -23,7 +24,7 @@ class CashRegisterView extends Observer {
   }
 
   reset() {
-    document.querySelector('#status').innerHTML = "";
+    document.querySelector('#status').innerHTML = "Niet betaald";
     document.querySelector('#price').innerHTML = "";
     document.querySelector('#payed').innerHTML = "";
     document.querySelector('#result').innerHTML = "";
