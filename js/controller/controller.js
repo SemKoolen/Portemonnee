@@ -56,6 +56,7 @@ class Controller {
   pressedNext() {
     if (this.gameState.questionNumbers.length <= 9) {
       this.gameState.setNewQuestion();
+      this.register.changePayedStatus(false);
     }
     if (this.gameState.questionNumbers.length > 10) {
       this.gameState.noQuestionLeft();
