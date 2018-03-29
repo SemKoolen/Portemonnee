@@ -21,7 +21,7 @@ class GameStateModel extends Observable {
   }
 
   setTimer() {
-    
+    set
   }
 
   setNewQuestion() {

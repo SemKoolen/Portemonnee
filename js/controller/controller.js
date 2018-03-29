@@ -16,17 +16,17 @@ class Controller {
     }
   }
 
-  startGame() {
-    this.register = new CashRegisterModel();
+  startGame(){
     this.counter = new CounterModel();
     if (this.user.getVersion() == "easy") {
-      this.gameView = new EasyView(this.counter, "easy");
-      this.registerView = new CashRegisterView(this.register, "easy");
+      this.gameView = new EasyView(this.counter, "easy")
+      this.register = new CashRegisterModel("easy");
     }
     else if (this.user.getVersion() == "hard") {
-      this.gameView = new EasyView(this.counter, "hard");
-      this.registerView = new CashRegisterView(this.register, "hard");
+      this.gameView = new EasyView(this.counter, "hard")
+      this.register = new CashRegisterModel("easy");
     }
+    this.registerView = new CashRegisterView(this.register)
     this.gameState = new GameStateModel();
     this.gameView = new GameView(this.gameState);
 
@@ -58,6 +58,7 @@ class Controller {
     if (this.gameState.questionNumbers.length <= 9) {
       this.gameState.setNewQuestion();
       // this.gameView.removeAllCounterObjects();
+      this.register.changePayedStatus(false);
     }
     if (this.gameState.questionNumbers.length > 10) {
       this.gameState.noQuestionLeft();
@@ -65,9 +66,12 @@ class Controller {
   }
 
   pressedConfirm() {
-    document.getElementById("next").disabled = false;
+    document.getElementById("next").disabled = false; 
     // disable coin adding/removing
     
+    this.register.saveProductPrice(this.gameState.price);
+    this.register.saveAmountPayed(this.counter.totalAmount);
+    this.register.changePayedStatus(true);
   }
 
 }

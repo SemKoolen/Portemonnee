@@ -11,6 +11,8 @@ class GameView extends Observer {
     this.setQuestionNumber();
   }
 
+  
+
   setProductPrice() {
     document.querySelector('#productprice').innerHTML = "€ " + this.model.price;
   }
