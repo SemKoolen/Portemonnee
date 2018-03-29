@@ -6,30 +6,20 @@ class CashRegisterModel extends Observable {
 
 	reset(){
 		this.changePayedStatus(false);
+		this.notify();
 	}
 
 	changePayedStatus(status){
 		this.payedStatus = status;
+		this.notify();
 	}
 
-	savePrice(){
-		
+	saveProductPrice(price){
+		this.productPrice = price;
 	}
 
-	saveAmountPayed(){
-
-	}
-
-	getPayedStatus(){
-		return this.payedStatus;
-	}
-
-	getPrice(){
-
-	}
-
-	getAmountPayed(){
-
+	saveAmountPayed(amount){
+		this.amountPayed = amount;
 	}
 
 }
