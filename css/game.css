@@ -26,6 +26,11 @@ header img {
   border-radius: 10px;
   border: 1px solid grey;
 }
+.wrapper button {
+  background: limegreen;
+  border-radius: 10px;
+  padding: 10px;
+}
 
 .lefttop {
   grid-area: lefttop;

@@ -5,7 +5,7 @@ class CounterModel extends Observable {
 		this.reset();
 	}
 
-	reset(){
+	reset() {
 		this.totalAmount = 0;
 		this.createCoinArray();
 	}

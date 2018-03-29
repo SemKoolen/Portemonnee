@@ -1,7 +1,7 @@
 class GameStateModel extends Observable {
   constructor() {
     super();
-    this.question = 1;
+    this.questionNumber = 1;
 
     this.request = new XMLHttpRequest();
     this.request.open("GET", "pom.xml", false);
@@ -11,18 +11,24 @@ class GameStateModel extends Observable {
     this.products = this.xml.childNodes[0];
 
     this.questionNumbers = [];
-
     this.questionAnswered = false;
 
-    // this.setQuestionNumbers();
+    this.time = 60;
+  }
 
+  resetTimer() {
+    this.time = 60;
+  }
 
+  setTimer() {
+    
   }
 
   setNewQuestion() {
     document.getElementById("next").disabled = true;
     var random = Math.floor((Math.random() * 21) + 1);
-    while (this.questionNumbers.includes(random)) {
+
+    while (this.questionNumbers.includes(random) ) {
       random = Math.floor((Math.random() * 21) + 1);
     }
     this.questionNumbers.push(random);

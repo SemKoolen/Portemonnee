@@ -8,6 +8,7 @@ class GameView extends Observer {
     this.setProductPrice();
     this.setProductName();
     this.setProductImage();
+    this.setQuestionNumber();
   }
 
   setProductPrice() {
@@ -20,7 +21,9 @@ class GameView extends Observer {
 
   setProductImage() {
     document.querySelector('#productimage').src = this.model.image;
-    console.log(this.model.image);
-    
+  }
+
+  setQuestionNumber() {
+    document.querySelector("#question").innerHTML = "Vraag: " + this.model.questionNumbers.length + "/10";
   }
 }
