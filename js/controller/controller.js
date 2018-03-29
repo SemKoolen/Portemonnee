@@ -78,6 +78,7 @@ class Controller {
     this.register.saveProductPrice(this.gameState.price);
     this.register.saveAmountPayed(this.counter.totalAmount);
     this.register.changePayedStatus(true);
+    this.register.checkAnswer(this.counter.coinArray);
   }
 
 }
