@@ -57,7 +57,7 @@ class Controller {
 
   pressedNext() {
     if (this.gameState.questionNumbers.length <= 10) {
-      this.gameState.confirmData(this.counter.totalAmount, this.register.change);
+      this.gameState.confirmData(this.register.amountPayedString, this.register.change, this.register.adjustedChange);
       this.gameState.setNewQuestion();
       this.gameState.resetTimer();
       this.gameState.setTimer();

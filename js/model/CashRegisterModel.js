@@ -8,6 +8,8 @@ class CashRegisterModel extends Observable {
 
 	reset(){
 		this.changePayedStatus(false);
+		this.adjustedChange = "0.00";
+		this.change = "0.00"
 		this.notify();
 	}
 
@@ -37,9 +39,12 @@ class CashRegisterModel extends Observable {
 			this.adjustedChange = this.change * -1 ;
 			let decimals = this.decimals(this.change);
 			this.adjustedChange = this.decimalString(decimals, this.adjustedChange);
+			this.change = "0.00"
+		} else if(this.change >= 0) {
+			this.adjustedChange = "0.00";
+			let decimals = this.decimals(this.change);
+			this.change = this.decimalString(decimals, this.change);
 		}
-		let decimals = this.decimals(this.change);
-		this.change = this.decimalString(decimals, this.change);
 		return this.change;
 	}
 
