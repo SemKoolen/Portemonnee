@@ -14,10 +14,10 @@ class CashRegisterView extends Observer {
     }
     this.displayPayedStatus();
     if (this.payedStatus) {
-      this.displayPrice(this.model.productPrice);
-      this.displayAmountPayed(this.model.amountPayed);
-      this.displayResult(this.model.result);
-      this.displayChange();
+      this.displayRegisterData(this.model.productPrice,
+                               this.model.amountPayedString,
+                               this.model.result,
+                               this.model.calculateChange());
     } else {
       this.reset();
     }
@@ -25,10 +25,10 @@ class CashRegisterView extends Observer {
 
   reset() {
     document.querySelector('#status').innerHTML = "Niet betaald";
-    document.querySelector('#price').innerHTML = "";
-    document.querySelector('#payed').innerHTML = "";
-    document.querySelector('#result').innerHTML = "";
-    document.querySelector('#change').innerHTML = "";
+    document.querySelector('#price').innerHTML = "€ " + this.model.productPrice;
+    document.querySelector('#payed').innerHTML = "€ 0.00";
+    document.querySelector('#result').innerHTML = "Onbepaald";
+    document.querySelector('#change').innerHTML = "€ 0.00";
   }
 
   displayPayedStatus() {
@@ -41,19 +41,11 @@ class CashRegisterView extends Observer {
     document.querySelector('#status').innerHTML = paymentStatus;
   }
 
-  displayPrice(price) {
-    document.querySelector('#price').innerHTML = "€ "+  price;
-  }
-
-  displayAmountPayed(payed) {
-    document.querySelector('#payed').innerHTML = "€ "+  payed;
-  }
-
-  displayResult(result) {
+  displayRegisterData(price, payed, result, change) {
+    document.querySelector('#price').innerHTML = "€ " +  price;
+    document.querySelector('#payed').innerHTML = "€ " +  payed;
     document.querySelector('#result').innerHTML = result;
+    document.querySelector('#change').innerHTML = "€ " + change;
   }
 
-  displayChange() {
-
-  }
 }

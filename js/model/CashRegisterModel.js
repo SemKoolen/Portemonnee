@@ -1,8 +1,9 @@
 class CashRegisterModel extends Observable {
-	constructor() {
+	constructor(price) {
     super();
 		this.reset();
 		this.answerArray = [];
+		this.productPrice = price;
   }
 
 	reset(){
@@ -21,11 +22,23 @@ class CashRegisterModel extends Observable {
 
 	saveAmountPayed(amount){
 		this.amountPayed = amount;
+		this.amountPayedString = this.amountPayed;
 		let decimals = this.decimals(amount);
 		if (decimals !== 2){
-			if (decimals == 0) { this.amountPayed += ".00"};
-			if (decimals == 1) { this.amountPayed += "0"};
+			if (decimals == 0) { this.amountPayedString += ".00"};
+			if (decimals == 1) { this.amountPayedString += "0"};
 		}
+	}
+
+	calculateChange(){
+		this.change = this.amountPayed - this.productPrice;
+		this.change = Math.round(this.change * 100) / 100;
+		let decimals = this.decimals(this.change);
+		if (decimals !== 2){
+			if (decimals == 0) { this.change += ".00"};
+			if (decimals == 1) { this.change += "0"};
+		}
+		return this.change;
 	}
 
 	checkAnswer(array){
@@ -35,13 +48,10 @@ class CashRegisterModel extends Observable {
 		console.log(this.array);
 		//checks if the arrays are equal.
 		if (JSON.stringify(this.array) === JSON.stringify(this.answerArray)) {
-			console.log("Perfect");
 			this.result = "Perfect";
 		} else if (this.amountPayed == this.productPrice){
-			console.log("Voldoende");
-			this.result = "Voldoende";
+			this.result = "Goed";
 		} else {
-			console.log("Fout");
 			this.result = "Fout";
 		}
 		this.notify();
