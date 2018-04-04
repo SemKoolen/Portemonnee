@@ -17,7 +17,8 @@ class CashRegisterView extends Observer {
       this.displayRegisterData(this.model.productPrice,
                                this.model.amountPayedString,
                                this.model.result,
-                               this.model.calculateChange());
+                               this.model.calculateChange(),
+                               this.model.adjustedChange);
     } else {
       this.reset();
     }
@@ -41,11 +42,18 @@ class CashRegisterView extends Observer {
     document.querySelector('#status').innerHTML = paymentStatus;
   }
 
-  displayRegisterData(price, payed, result, change) {
+  displayRegisterData(price, payed, result, change, adjustedChange) {
     document.querySelector('#price').innerHTML = "€ " +  price;
     document.querySelector('#payed').innerHTML = "€ " +  payed;
     document.querySelector('#result').innerHTML = result;
-    document.querySelector('#change').innerHTML = "€ " + change;
+    if (change < 0) {
+      change = change * -1;
+      document.querySelector('#changeTitle').innerHTML = "Restrerend:";
+      document.querySelector('#change').innerHTML = "€ " + adjustedChange;
+    } else {
+      document.querySelector('#changeTitle').innerHTML = "Wisselgeld:";
+      document.querySelector('#change').innerHTML = "€ " + change;
+    }
   }
 
 }

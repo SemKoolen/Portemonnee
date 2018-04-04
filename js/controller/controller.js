@@ -28,7 +28,7 @@ class Controller {
     this.gameView = new GameView(this.gameState);
     this.gameState.setNewQuestion();
     this.gameState.setTimer();
-    
+
     this.register = new CashRegisterModel(this.gameState.price);
     this.registerView = new CashRegisterView(this.register);
 
@@ -64,13 +64,14 @@ class Controller {
       this.userView.disableButtons("confirm", false);
       this.gameEasyView.removeAllCounterObjects();
       this.counter.reset();
-      this.registerView.reset();
     }
 
 
     if (this.gameState.questionNumbers.length > 10) {
       this.gameState.noQuestionLeft();
     }
+    this.register.saveProductPrice(this.gameState.price);
+    this.registerView.reset();
   }
 
   pressedConfirm() {
