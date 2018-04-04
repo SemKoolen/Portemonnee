@@ -39,20 +39,22 @@ class GameView extends Observer {
 
   startPostPage() {
     if (this.model.questiondone === true) {
-      console.log(this.model.prices);
-      console.log(this.model.prices.length);
+      console.log("cheese " + this.model.paid);
+      
       document.querySelector('.wrapper').style.display = "none";
       document.querySelector('.prepage').style.display = "none";
       document.querySelector('.postpage').style.display = "grid";
       for (let i = 0; i < this.model.prices.length; i++) {
-        document.querySelector("#price"+(i+1)).innerHTML = this.model.prices[i];
+        document.getElementById("#price" + (i+1)).innerHTML = this.model.prices[i];
+        document.getElementById("#paid"+(i+1)).innerHTML = this.model.paid[i];
+        document.getElementById("#change"+(i+1)).innerHTML = this.model.change[i];
       }
-      for (let i = 0; i < this.model.paid.length; i++) {
-        document.querySelector("#paid"+(i+1)).innerHTML = this.model.paid[i];
-      }
-      for (let i = 0; i < this.model.change.length; i++) {
-        document.querySelector("#change"+(i+1)).innerHTML = this.model.change[i];
-      }
+      // for (let i = 0; i < this.model.paid.length; i++) {
+      //   document.querySelector("#paid"+(i+1)).innerHTML = this.model.paid[i];
+      // }
+      // for (let i = 0; i < this.model.change.length; i++) {
+      //   document.querySelector("#change"+(i+1)).innerHTML = this.model.change[i];
+      // }
     }
     
   }

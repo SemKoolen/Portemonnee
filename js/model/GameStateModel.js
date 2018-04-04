@@ -1,6 +1,7 @@
 class GameStateModel extends Observable {
   constructor(controller) {
     super();
+
     //Used to execute a method when the time is 0
     this.controller = controller;
 
@@ -75,7 +76,6 @@ class GameStateModel extends Observable {
     this.questiondone = true;
     console.log("noquestions");
     this.notify();
-    this.stopIntervalTimer();
   }
 
   pressConfirm(v) {

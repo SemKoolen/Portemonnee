@@ -78,9 +78,7 @@ class Controller {
     this.gameState.pressConfirm(true);
     this.userView.disableButtons("next", false);
     this.userView.disableButtons("confirm", true);
-
     this.gameState.stopIntervalTimer();
-
     this.gameState.confirmData(this.counter.totalAmount, this.register.change);
     this.register.saveProductPrice(this.gameState.price);
     this.register.saveAmountPayed(this.counter.totalAmount);
