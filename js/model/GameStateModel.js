@@ -17,6 +17,8 @@ class GameStateModel extends Observable {
 
     this.questionNumbers = [];
     this.prices = [];
+    this.paid = [];
+    this.change = [];
     this.pressedConfirm = false;
     this.time = 60;
   }
@@ -62,6 +64,11 @@ class GameStateModel extends Observable {
     this.image = product.getElementsByTagName("Product_picture")[0].childNodes[0].nodeValue;
     console.log(this.id + ": " + this.name + " " + this.price + " " + this.image);
     this.notify();
+  }
+
+  confirmData(pay, change) {
+    this.paid.push(pay);
+    this.change.push(change);
   }
 
   noQuestionLeft() {

@@ -56,9 +56,8 @@ class Controller {
     }
   }
 
-
   pressedNext() {
-    if (this.gameState.questionNumbers.length <= 9) {
+    if (this.gameState.questionNumbers.length <= 10) {
       this.gameState.setNewQuestion();
       this.gameState.resetTimer();
       this.gameState.setTimer();
@@ -68,7 +67,9 @@ class Controller {
       this.counter.reset();
       this.registerView.reset();
     }
-    if (this.gameState.questionNumbers.length >= 10) {
+    
+    
+    if (this.gameState.questionNumbers.length > 10) {
       this.gameState.noQuestionLeft();
     }
   }
@@ -80,6 +81,7 @@ class Controller {
 
     this.gameState.stopIntervalTimer();
 
+    this.gameState.confirmData(this.counter.totalAmount, this.register.change);
     this.register.saveProductPrice(this.gameState.price);
     this.register.saveAmountPayed(this.counter.totalAmount);
     this.register.changePayedStatus(true);
