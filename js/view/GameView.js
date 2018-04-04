@@ -45,17 +45,11 @@ class GameView extends Observer {
       document.querySelector('.prepage').style.display = "none";
       document.querySelector('.postpage').style.display = "grid";
       for (let i = 0; i < this.model.prices.length; i++) {
-        document.getElementById("#price" + (i+1)).innerHTML = this.model.prices[i];
-        document.getElementById("#paid"+(i+1)).innerHTML = this.model.paid[i];
-        document.getElementById("#change"+(i+1)).innerHTML = this.model.change[i];
+        document.querySelector("#price" + (i+1)).innerHTML = this.model.prices[i];
+        document.querySelector("#paid"+(i+1)).innerHTML = this.model.paid[i];
+        document.querySelector("#change"+(i+1)).innerHTML = this.model.change[i];
+        console.log("loop");
       }
-      // for (let i = 0; i < this.model.paid.length; i++) {
-      //   document.querySelector("#paid"+(i+1)).innerHTML = this.model.paid[i];
-      // }
-      // for (let i = 0; i < this.model.change.length; i++) {
-      //   document.querySelector("#change"+(i+1)).innerHTML = this.model.change[i];
-      // }
     }
-    
   }
 }
