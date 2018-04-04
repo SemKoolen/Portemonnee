@@ -68,6 +68,7 @@ class GameStateModel extends Observable {
     this.questiondone = true;
     console.log("noquestions");
     this.notify();
+    this.stopIntervalTimer();
   }
 
   pressConfirm(v) {

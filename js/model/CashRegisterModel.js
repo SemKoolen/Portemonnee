@@ -2,6 +2,7 @@ class CashRegisterModel extends Observable {
 	constructor() {
     super();
 		this.reset();
+		this.answerArray = [];
   }
 
 	reset(){
@@ -20,14 +21,30 @@ class CashRegisterModel extends Observable {
 
 	saveAmountPayed(amount){
 		this.amountPayed = amount;
+		let decimals = this.decimals(amount);
+		if (decimals !== 2){
+			if (decimals == 0) { this.amountPayed += ".00"};
+			if (decimals == 1) { this.amountPayed += "0"};
+		}
 	}
 
 	checkAnswer(array){
 		this.array = array;
-		// for (let x = 0; x < this.array.length; x++) {
-		//
-		// }
 		this.optimalAnswer();
+		console.log(this.answerArray);
+		console.log(this.array);
+		//checks if the arrays are equal.
+		if (JSON.stringify(this.array) === JSON.stringify(this.answerArray)) {
+			console.log("Perfect");
+			this.result = "Perfect";
+		} else if (this.amountPayed == this.productPrice){
+			console.log("Voldoende");
+			this.result = "Voldoende";
+		} else {
+			console.log("Fout");
+			this.result = "Fout";
+		}
+		this.notify();
 	}
 
 	optimalAnswer(){
@@ -36,7 +53,6 @@ class CashRegisterModel extends Observable {
 		for (let x = 0; x < 11; x++) {
 			this.answerArray[x] = 0;
 		}
-		console.log(this.answerArray.length);
 
 		while (this.price > 0) {
 			switch(true) {
@@ -55,8 +71,17 @@ class CashRegisterModel extends Observable {
 			}
 			this.price = Math.round(this.price * 100) / 100;
 		}
-		console.log(this.answerArray)
+	}
 
+	decimals(num) {
+		var match = (''+num).match(/(?:\.(\d+))?(?:[eE]([+-]?\d+))?$/);
+		if (!match) { return 0; }
+		return Math.max(
+	     0,
+	     // Number of digits right of decimal point.
+	     (match[1] ? match[1].length : 0)
+	     // Adjust for scientific notation.
+	     - (match[2] ? +match[2] : 0));
 	}
 
 }

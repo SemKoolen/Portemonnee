@@ -16,7 +16,7 @@ class CashRegisterView extends Observer {
     if (this.payedStatus) {
       this.displayPrice(this.model.productPrice);
       this.displayAmountPayed(this.model.amountPayed);
-      this.displayResult()
+      this.displayResult(this.model.result);
       this.displayChange();
     } else {
       this.reset();
@@ -49,8 +49,8 @@ class CashRegisterView extends Observer {
     document.querySelector('#payed').innerHTML = "€ "+  payed;
   }
 
-  displayResult() {
-
+  displayResult(result) {
+    document.querySelector('#result').innerHTML = result;
   }
 
   displayChange() {
