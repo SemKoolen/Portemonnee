@@ -1,8 +1,9 @@
 class CashRegisterModel extends Observable {
-	constructor() {
+	constructor(price) {
     super();
 		this.reset();
 		this.answerArray = [];
+		this.productPrice = price;
   }
 
 	reset(){

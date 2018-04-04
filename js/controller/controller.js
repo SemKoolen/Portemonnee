@@ -20,18 +20,17 @@ class Controller {
     this.counter = new CounterModel();
     if (this.user.getVersion() == "easy") {
       this.gameEasyView = new EasyView(this.counter, "easy");
-      this.register = new CashRegisterModel("easy");
     }
     else if (this.user.getVersion() == "hard") {
       this.gameEasyView = new EasyView(this.counter, "hard");
-      this.register = new CashRegisterModel("easy");
     }
-    this.registerView = new CashRegisterView(this.register)
     this.gameState = new GameStateModel(this);
     this.gameView = new GameView(this.gameState);
-
     this.gameState.setNewQuestion();
     this.gameState.setTimer();
+    
+    this.register = new CashRegisterModel(this.gameState.price);
+    this.registerView = new CashRegisterView(this.register);
 
     this.createListeners();
   }
@@ -67,8 +66,8 @@ class Controller {
       this.counter.reset();
       this.registerView.reset();
     }
-    
-    
+
+
     if (this.gameState.questionNumbers.length > 10) {
       this.gameState.noQuestionLeft();
     }

@@ -25,7 +25,7 @@ class CashRegisterView extends Observer {
 
   reset() {
     document.querySelector('#status').innerHTML = "Niet betaald";
-    document.querySelector('#price').innerHTML = "€ 0.00";
+    document.querySelector('#price').innerHTML = "€ " + this.model.productPrice;
     document.querySelector('#payed').innerHTML = "€ 0.00";
     document.querySelector('#result').innerHTML = "Onbepaald";
     document.querySelector('#change').innerHTML = "€ 0.00";

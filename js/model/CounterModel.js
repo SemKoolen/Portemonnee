@@ -13,9 +13,10 @@ class CounterModel extends Observable {
 	//Creates a var for every coin/bill to be used in an array.
 	createCoinArray() {
 		this.coinArray = [];
-		for (let x = 0; x < 11; x++) {
+		for (let x = 0; x < 12; x++) {
 			this.coinArray[x] = 0;
 		}
+		console.log(this.coinArray);
 	}
 
 	counterHandler(action, amount) {
@@ -27,7 +28,7 @@ class CounterModel extends Observable {
 		if (action == "add") {
 			this.coinArray[coin] = this.coinArray[coin] + 1;
 			this.totalAmount += amount;
-			
+
 		} else if (action == "subtract") {
 			this.coinArray[coin] = this.coinArray[coin] - 1;
 			this.totalAmount -= amount;
@@ -36,7 +37,6 @@ class CounterModel extends Observable {
 		this.totalAmount = Math.round(this.totalAmount * 100) / 100;
 		//Saves amount of coins the specific coin being handled  outside the method.
 		this.currentCoinAmount = this.coinArray[coin];
-
 		//Checks if the coin should be made visible or not.
 		if (this.coinArray[coin] == 1) {
 			this.doDisplay = this.currentCoinObject;
