@@ -57,7 +57,7 @@ class GameStateModel extends Observable {
     this.id = product.getElementsByTagName("Product_id")[0].childNodes[0].nodeValue;
     this.name = product.getElementsByTagName("Product_name")[0].childNodes[0].nodeValue;
     this.price = product.getElementsByTagName("Product_price")[0].childNodes[0].nodeValue;
-    this.prices.push(price);
+    this.prices.push(product.getElementsByTagName("Product_price")[0].childNodes[0].nodeValue);
     this.image = product.getElementsByTagName("Product_picture")[0].childNodes[0].nodeValue;
     console.log(this.id + ": " + this.name + " " + this.price + " " + this.image);
     this.notify();

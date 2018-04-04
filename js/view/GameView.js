@@ -47,6 +47,12 @@ class GameView extends Observer {
       for (let i = 0; i < this.model.prices.length; i++) {
         document.querySelector("#price"+(i+1)).innerHTML = this.model.prices[i];
       }
+      for (let i = 0; i < this.model.price.length; i++) {
+        // document.querySelector("#paid"+(i+1)).innerHTML =  //++ PAID VALUE [i]
+      }
+      for (let i = 0; i < this.model.price.length; i++) {
+        // document.querySelector("#change"+(i+1)).innerHTML =  //++ CHANGE VALUE [i]
+      }
     }
     
   }
