@@ -33,12 +33,22 @@ class CashRegisterModel extends Observable {
 	calculateChange(){
 		this.change = this.amountPayed - this.productPrice;
 		this.change = Math.round(this.change * 100) / 100;
-		let decimals = this.decimals(this.change);
-		if (decimals !== 2){
-			if (decimals == 0) { this.change += ".00"};
-			if (decimals == 1) { this.change += "0"};
+		if (this.change < 0) {
+			this.adjustedChange = this.change * -1 ;
+			let decimals = this.decimals(this.change);
+			this.adjustedChange = this.decimalString(decimals, this.adjustedChange);
 		}
+		let decimals = this.decimals(this.change);
+		this.change = this.decimalString(decimals, this.change);
 		return this.change;
+	}
+
+	decimalString(decimals, variable) {
+		if (decimals !== 2){
+			if (decimals == 0) { variable += ".00"};
+			if (decimals == 1) { variable += "0"};
+		}
+		return variable;
 	}
 
 	checkAnswer(array){
@@ -60,7 +70,7 @@ class CashRegisterModel extends Observable {
 	optimalAnswer(){
 		this.answerArray = [];
 		this.price = this.productPrice;
-		for (let x = 0; x < 11; x++) {
+		for (let x = 0; x < 12; x++) {
 			this.answerArray[x] = 0;
 		}
 
