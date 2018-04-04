@@ -42,11 +42,11 @@ class CashRegisterView extends Observer {
   }
 
   displayPrice(price) {
-    document.querySelector('#price').innerHTML = price;
+    document.querySelector('#price').innerHTML = "€ "+  price;
   }
 
   displayAmountPayed(payed) {
-    document.querySelector('#payed').innerHTML = payed;
+    document.querySelector('#payed').innerHTML = "€ "+  payed;
   }
 
   displayResult() {

@@ -35,4 +35,8 @@ class UserView extends Observer {
     }
   }
 
+  disableButtons(button, bool) {
+    document.querySelector("#" + button).disabled = bool;
+  }
+
 }

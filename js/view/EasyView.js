@@ -39,13 +39,13 @@ class EasyView extends Observer {
     let amount = this.model.getCurrentCoinAmount();
     let listNodes = document.getElementById(object).getElementsByTagName("font");
     let pElement = listNodes[0];
-    pElement.innerHTML  = amount;
+    pElement.innerHTML = amount;
   }
 
-  displayTotal(){
+  displayTotal() {
     let total = this.model.getCurrentTotal();
     let pElement = document.getElementById("userTotal");
-    pElement.innerHTML  = total;
+    pElement.innerHTML = total;
   }
 
   checkCounterDisplay() {

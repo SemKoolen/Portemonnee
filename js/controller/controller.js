@@ -19,11 +19,11 @@ class Controller {
   startGame() {
     this.counter = new CounterModel();
     if (this.user.getVersion() == "easy") {
-      this.gameView = new EasyView(this.counter, "easy")
+      this.gameEasyView = new EasyView(this.counter, "easy");
       this.register = new CashRegisterModel("easy");
     }
     else if (this.user.getVersion() == "hard") {
-      this.gameView = new EasyView(this.counter, "hard")
+      this.gameEasyView = new EasyView(this.counter, "hard");
       this.register = new CashRegisterModel("easy");
     }
     this.registerView = new CashRegisterView(this.register)
@@ -51,7 +51,9 @@ class Controller {
   //Tells counterHandler method what amount to be added or subtracted.
   //The method also uses the amount to figure out wich coin was clicked.
   onClickMoney(action, amount) {
-    this.counter.counterHandler(action, amount);
+    if (this.gameState.pressedConfirm === false) {
+      this.counter.counterHandler(action, amount);
+    }
   }
 
 
@@ -60,9 +62,11 @@ class Controller {
       this.gameState.setNewQuestion();
       this.gameState.resetTimer();
       this.gameState.setTimer();
-
-      // this.gameView.removeAllCounterObjects(); 
-      this.register.changePayedStatus(false);
+      this.gameState.pressConfirm(false);
+      this.userView.disableButtons("confirm", false);
+      this.gameEasyView.removeAllCounterObjects();
+      this.counter.reset();
+      this.registerView.reset();
     }
     if (this.gameState.questionNumbers.length >= 10) {
       this.gameState.noQuestionLeft();
@@ -70,8 +74,9 @@ class Controller {
   }
 
   pressedConfirm() {
-    document.getElementById("next").disabled = false;
-    // disable coin adding/removing
+    this.gameState.pressConfirm(true);
+    this.userView.disableButtons("next", false);
+    this.userView.disableButtons("confirm", true);
 
     this.gameState.stopIntervalTimer();
 

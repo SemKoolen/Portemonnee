@@ -27,6 +27,7 @@ class CounterModel extends Observable {
 		if (action == "add") {
 			this.coinArray[coin] = this.coinArray[coin] + 1;
 			this.totalAmount += amount;
+			
 		} else if (action == "subtract") {
 			this.coinArray[coin] = this.coinArray[coin] - 1;
 			this.totalAmount -= amount;

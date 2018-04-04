@@ -17,7 +17,7 @@ class GameStateModel extends Observable {
 
     this.questionNumbers = [];
     this.prices = [];
-
+    this.pressedConfirm = false;
     this.time = 60;
   }
 
@@ -34,6 +34,7 @@ class GameStateModel extends Observable {
     this.notify();
     if (this.time <= 0) {
       clearInterval(this.timeinterval);
+      this.time = 0;
       this.controller.pressedConfirm();
     }
   }
@@ -67,5 +68,9 @@ class GameStateModel extends Observable {
     this.questiondone = true;
     console.log("noquestions");
     this.notify();
+  }
+
+  pressConfirm(v) {
+    this.pressedConfirm = v;
   }
 }
