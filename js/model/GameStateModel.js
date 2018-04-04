@@ -21,6 +21,7 @@ class GameStateModel extends Observable {
     this.paid = [];
     this.change = [];
     this.adjusted = [];
+    this.results= [];
     this.pressedConfirm = false;
     this.time = 60;
   }
@@ -68,10 +69,11 @@ class GameStateModel extends Observable {
     this.notify();
   }
 
-  confirmData(pay, change, adjusted) {
+  confirmData(pay, change, adjusted, result) {
     this.paid.push(pay);
     this.change.push(change);
     this.adjusted.push(adjusted);
+    this.results.push(result);
   }
 
   noQuestionLeft() {

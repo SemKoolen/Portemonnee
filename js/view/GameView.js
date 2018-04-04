@@ -40,15 +40,23 @@ class GameView extends Observer {
   startPostPage() {
     if (this.model.questiondone === true) {
       console.log("cheese " + this.model.paid);
-      
+      this.src;
       document.querySelector('.wrapper').style.display = "none";
       document.querySelector('.prepage').style.display = "none";
       document.querySelector('.postpage').style.display = "grid";
       for (let i = 0; i < this.model.prices.length; i++) {
-        document.querySelector("#price" + (i+1)).innerHTML = this.model.prices[i];
-        document.querySelector("#paid"+(i+1)).innerHTML = this.model.paid[i];
-        document.querySelector("#change"+(i+1)).innerHTML = this.model.change[i];
-        document.querySelector("#adjusted"+(i+1)).innerHTML = this.model.adjusted[i];
+        document.querySelector("#price" + (i+1)).innerHTML = "€ "+ this.model.prices[i];
+        document.querySelector("#paid"+(i+1)).innerHTML = "€ "+ this.model.paid[i];
+        document.querySelector("#change"+(i+1)).innerHTML = "€ "+ this.model.change[i];
+        document.querySelector("#adjusted"+(i+1)).innerHTML = "€ "+ this.model.adjusted[i];
+        if (this.model.results[i] === "Perfect") {
+          this.src = "images/green.png";
+        } else if (this.model.results[i] === "Goed") {
+          this.src = "images/orange.png";
+        } else if (this.model.results[i] === "Fout") {
+          this.src = "images/red.png";
+        }
+        document.querySelector("#result"+(i+1)).src = this.src;
       }
     }
   }
