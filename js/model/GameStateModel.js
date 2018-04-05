@@ -21,9 +21,11 @@ class GameStateModel extends Observable {
     this.paid = [];
     this.change = [];
     this.adjusted = [];
-    this.results= [];
+    this.results = [];
     this.pressedConfirm = false;
     this.time = 60;
+    this.random;
+    this.product;
   }
 
   resetTimer() {
@@ -36,6 +38,7 @@ class GameStateModel extends Observable {
 
   timeInterval() {
     this.time--;
+
     this.notify();
     if (this.time <= 0) {
       clearInterval(this.timeinterval);
@@ -48,23 +51,29 @@ class GameStateModel extends Observable {
     clearInterval(this.timeinterval);
   }
 
-  setNewQuestion() {
-    document.getElementById("next").disabled = true;
-    var random = Math.floor((Math.random() * 21) + 1);
-
-    while (this.questionNumbers.includes(random)) {
-      random = Math.floor((Math.random() * 21) + 1);
+  setNewQuestion(version) {
+    if (version === "easy") {
+      this.random = Math.floor(Math.random() * (22 - 1)) + 1;
+      while (this.questionNumbers.includes(this.random)) {
+        this.random = Math.floor(Math.random() * (22 - 1)) + 1;
+      }
+    } else if (version === "hard") {
+      this.random = Math.floor(Math.random() * (49 - 23)) + 23;
+      while (this.questionNumbers.includes(this.random)) {
+        this.random = Math.floor(Math.random() * (49 - 23)) + 23;
+      }
     }
-    this.questionNumbers.push(random);
 
-    let product = this.products.children[random - 1];
+    this.questionNumbers.push(this.random);
+
+    this.product = this.products.children[this.random - 1];
 
     // Access each of the data values.
-    this.id = product.getElementsByTagName("Product_id")[0].childNodes[0].nodeValue;
-    this.name = product.getElementsByTagName("Product_name")[0].childNodes[0].nodeValue;
-    this.price = product.getElementsByTagName("Product_price")[0].childNodes[0].nodeValue;
-    this.prices.push(product.getElementsByTagName("Product_price")[0].childNodes[0].nodeValue);
-    this.image = product.getElementsByTagName("Product_picture")[0].childNodes[0].nodeValue;
+    this.id = this.product.getElementsByTagName("Product_id")[0].childNodes[0].nodeValue;
+    this.name = this.product.getElementsByTagName("Product_name")[0].childNodes[0].nodeValue;
+    this.price = this.product.getElementsByTagName("Product_price")[0].childNodes[0].nodeValue;
+    this.prices.push(this.product.getElementsByTagName("Product_price")[0].childNodes[0].nodeValue);
+    this.image = this.product.getElementsByTagName("Product_picture")[0].childNodes[0].nodeValue;
     console.log(this.id + ": " + this.name + " " + this.price + " " + this.image);
     this.notify();
   }

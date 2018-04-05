@@ -26,7 +26,7 @@ class Controller {
     }
     this.gameState = new GameStateModel(this);
     this.gameView = new GameView(this.gameState);
-    this.gameState.setNewQuestion();
+    this.gameState.setNewQuestion(this.user.getVersion());
     this.gameState.setTimer();
 
     this.register = new CashRegisterModel(this.gameState.price);
@@ -62,6 +62,7 @@ class Controller {
       this.gameState.resetTimer();
       this.gameState.setTimer();
       this.gameState.pressConfirm(false);
+      this.userView.disableButtons("next", true);
       this.userView.disableButtons("confirm", false);
       this.gameEasyView.removeAllCounterObjects();
       this.counter.reset();
