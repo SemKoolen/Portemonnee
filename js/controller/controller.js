@@ -18,12 +18,7 @@ class Controller {
 
   startGame() {
     this.counter = new CounterModel();
-    if (this.user.getVersion() == "easy") {
-      this.gameEasyView = new EasyView(this.counter, "easy");
-    }
-    else if (this.user.getVersion() == "hard") {
-      this.gameEasyView = new EasyView(this.counter, "hard");
-    }
+    this.gameEasyView = new EasyView(this.counter, this.user.getVersion());
     this.gameState = new GameStateModel(this);
     this.gameView = new GameView(this.gameState);
     this.gameState.setNewQuestion();
