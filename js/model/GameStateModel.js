@@ -53,14 +53,14 @@ class GameStateModel extends Observable {
 
   setNewQuestion(version) {
     if (version === "easy") {
-      this.random = Math.floor(Math.random() * (22 - 1)) + 1;
+      this.random = Math.floor(Math.random() * (20 - 1)) + 1;
       while (this.questionNumbers.includes(this.random)) {
-        this.random = Math.floor(Math.random() * (22 - 1)) + 1;
+        this.random = Math.floor(Math.random() * (20 - 1)) + 1;
       }
     } else if (version === "hard") {
-      this.random = Math.floor(Math.random() * (49 - 23)) + 23;
+      this.random = Math.floor(Math.random() * (50 - 20)) + 20;
       while (this.questionNumbers.includes(this.random)) {
-        this.random = Math.floor(Math.random() * (49 - 23)) + 23;
+        this.random = Math.floor(Math.random() * (50 -20)) + 20;
       }
     }
 
