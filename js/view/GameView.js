@@ -5,11 +5,8 @@ class GameView extends Observer {
   }
 
   update() {
-    this.setProductPrice();
-    this.setProductName();
-    this.setProductImage();
-    this.setQuestionNumber();
     this.setTimer();
+    this.setProduct();
     this.startPostPage();
   }
 
@@ -21,19 +18,10 @@ class GameView extends Observer {
     }
   }
 
-  setProductPrice() {
+  setProduct() {
     document.querySelector('#productprice').innerHTML = "€ " + this.model.price;
-  }
-
-  setProductName() {
     document.querySelector('#productname').innerHTML = this.model.name;
-  }
-
-  setProductImage() {
     document.querySelector('#productimage').src = this.model.image;
-  }
-
-  setQuestionNumber() {
     document.querySelector("#question").innerHTML = "Vraag: " + this.model.questionNumbers.length + "/10";
   }
 
