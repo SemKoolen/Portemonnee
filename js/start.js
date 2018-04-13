@@ -1,6 +1,6 @@
 window.onload = start;
-
+var c;
 function start()
 {
-	var controller = new Controller();
+	c = new Controller();
 }

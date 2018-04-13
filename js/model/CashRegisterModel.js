@@ -59,8 +59,6 @@ class CashRegisterModel extends Observable {
 	checkAnswer(array){
 		this.array = array;
 		this.optimalAnswer();
-		console.log(this.answerArray);
-		console.log(this.array);
 		//checks if the arrays are equal.
 		if (JSON.stringify(this.array) === JSON.stringify(this.answerArray)) {
 			this.result = "Perfect";

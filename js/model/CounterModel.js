@@ -16,7 +16,6 @@ class CounterModel extends Observable {
 		for (let x = 0; x < 12; x++) {
 			this.coinArray[x] = 0;
 		}
-		console.log(this.coinArray);
 	}
 
 	counterHandler(action, amount) {

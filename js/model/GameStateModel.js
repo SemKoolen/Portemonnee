@@ -74,7 +74,6 @@ class GameStateModel extends Observable {
     this.price = this.product.getElementsByTagName("Product_price")[0].childNodes[0].nodeValue;
     this.prices.push(this.product.getElementsByTagName("Product_price")[0].childNodes[0].nodeValue);
     this.image = this.product.getElementsByTagName("Product_picture")[0].childNodes[0].nodeValue;
-    console.log(this.id + ": " + this.name + " " + this.price + " " + this.image);
     this.notify();
   }
 
@@ -87,7 +86,6 @@ class GameStateModel extends Observable {
 
   noQuestionLeft() {
     this.questiondone = true;
-    console.log("noquestions");
     this.notify();
   }
 

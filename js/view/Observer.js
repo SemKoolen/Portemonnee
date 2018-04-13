@@ -4,6 +4,6 @@ class Observer {
 }
 
 update() {
-	console.log("Model is geupdated!");
+	
   }
 }

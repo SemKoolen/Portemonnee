@@ -27,12 +27,11 @@ class GameView extends Observer {
 
   startPostPage() {
     if (this.model.questiondone === true) {
-      console.log("cheese " + this.model.paid);
       this.src;
       document.querySelector('.wrapper').style.display = "none";
       document.querySelector('.prepage').style.display = "none";
       document.querySelector('.postpage').style.display = "grid";
-      for (let i = 0; i < this.model.prices.length; i++) {
+      for (let i = 0; i < this.model.prices.length -1; i++) {
         document.querySelector("#price" + (i+1)).innerHTML = "€ "+ this.model.prices[i];
         document.querySelector("#paid"+(i+1)).innerHTML = "€ "+ this.model.paid[i];
         document.querySelector("#change"+(i+1)).innerHTML = "€ "+ this.model.change[i];
