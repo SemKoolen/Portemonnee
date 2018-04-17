@@ -5,14 +5,9 @@ class GameStateModel extends Observable {
     //Used to execute a method when the time is 0
     this.controller = controller;
 
-    this.questionNumber = 1;
+    this.productsList = new Products();
 
-    this.request = new XMLHttpRequest();
-    this.request.open("GET", "pom.xml", false);
-    this.request.setRequestHeader("Content-Type", "text/xml");
-    this.request.send(null);
-    this.xml = this.request.responseXML;
-    this.products = this.xml.childNodes[0];
+    this.questionNumber = 1;
 
     this.questiondone = false;
 
@@ -60,20 +55,20 @@ class GameStateModel extends Observable {
     } else if (version === "hard") {
       this.random = Math.floor(Math.random() * (50 - 20)) + 20;
       while (this.questionNumbers.includes(this.random)) {
-        this.random = Math.floor(Math.random() * (50 -20)) + 20;
+        this.random = Math.floor(Math.random() * (50 - 20)) + 20;
       }
     }
 
     this.questionNumbers.push(this.random);
 
-    this.product = this.products.children[this.random - 1];
+    this.product = this.productsList.products.Product[this.random];
 
-    // Access each of the data values.
-    this.id = this.product.getElementsByTagName("Product_id")[0].childNodes[0].nodeValue;
-    this.name = this.product.getElementsByTagName("Product_name")[0].childNodes[0].nodeValue;
-    this.price = this.product.getElementsByTagName("Product_price")[0].childNodes[0].nodeValue;
-    this.prices.push(this.product.getElementsByTagName("Product_price")[0].childNodes[0].nodeValue);
-    this.image = this.product.getElementsByTagName("Product_picture")[0].childNodes[0].nodeValue;
+    this.id = this.product.Product_id;
+    this.name = this.product.Product_name;
+    this.price = this.product.Product_price;
+    this.prices.push(this.product.Product_price);
+    this.image = this.product.Product_picture;
+
     this.notify();
   }
 
